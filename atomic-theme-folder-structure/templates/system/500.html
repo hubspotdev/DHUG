@@ -1,0 +1,27 @@
+<!--
+  templateType: error_page
+  isAvailableForNewContent: true
+  label: Fivenines - 500 error
+-->
+{% set template_css = "../../css/system/system.css" %}
+{% extends "../layouts/base.html" %}
+{% include "../naming_variables.html" %}
+
+{% block body %}
+    
+<main id="error" class="server">
+    <section class="container">
+        <div class="row">
+            <div class="col-12 system-page">
+
+    {# Content #}
+
+    {% module "content"
+      path="@hubspot/rich_text",
+      html="<h1>{{ server_error_headline }}</h1><p>{{ server_error_text }}</p>"
+    %}
+
+    </div>
+    </section>
+</main>    
+{% endblock body %}

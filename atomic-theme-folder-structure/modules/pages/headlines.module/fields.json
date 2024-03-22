@@ -1,0 +1,93 @@
+[
+  {
+    "name": "headline",
+    "label": "Headline",
+    "id": "content.headline",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": true,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": "Informative headline"
+  },
+  {
+    "name": "headline_size",
+    "label": "Headline size",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "inline_help_text": "",
+    "help_text": "This will set the headline-tag. <strong>SEO relevant</strong>",
+    "choices": [
+      ["h1", "Headline 1"],
+      ["h2", "Headline 2"],
+      ["h3", "Headline 3"],
+      ["h4", "Headline 4"],
+      ["h5", "Headline 5"],
+      ["h6", "Headline 6"]
+    ],
+    "type": "choice",
+    "placeholder": "",
+    "default": "h3",
+    "visibility": {
+      "controlling_field": "content.headline",
+      "controlling_value_regex": "true",
+      "operator": "NOT_EMPTY"
+    }
+  },
+  {
+    "name": "headline_style",
+    "label": "Headline style",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "inline_help_text": "",
+    "help_text": "This will set the headline look. <strong>Only for styling - no SEO impact</strong>",
+    "choices": [
+      ["h1", "Headline 1"],
+      ["h2", "Headline 2"],
+      ["h3", "Headline 3"],
+      ["h4", "Headline 4"],
+      ["h5", "Headline 5"],
+      ["h6", "Headline 6"]
+    ],
+    "type": "choice",
+    "placeholder": "",
+    "default": "h3",
+    "visibility": {
+      "controlling_field": "content.headline",
+      "controlling_value_regex": "true",
+      "operator": "NOT_EMPTY"
+    }
+  },
+  {
+  "name": "advanced",
+  "label": "Advanced settings",
+  "required": false,
+  "locked": false,
+  "children": [
+    {
+    "name": "custom_class",
+    "label": "Custom class",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null }
+  ],
+  "type": "group",
+  "inline_help_text": "",
+  "help_text": "",
+  "default": {} }
+]

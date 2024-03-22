@@ -1,0 +1,25 @@
+*, 
+*:before, 
+*:after {
+  box-sizing: border-box;
+}
+
+figure {
+    margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* FOR DHUG DEMO only */
+main {
+    display: flex !important;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    height: 100vh;
+}

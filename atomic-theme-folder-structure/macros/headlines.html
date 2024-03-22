@@ -1,0 +1,11 @@
+<!--
+    templateType: none
+    isAvailableForNewContent: false
+-->
+
+{# Default headline macro #}
+{% macro simple_headline(headline, headline_size, headline_style, custom_class )%}
+    <{{ headline_size }} class="{{ headline_style }} headline {{ custom_class }}">
+        {{ headline }}
+    </{{ headline_size }}>
+{% endmacro %}

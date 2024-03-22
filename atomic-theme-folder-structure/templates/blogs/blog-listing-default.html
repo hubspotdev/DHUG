@@ -1,0 +1,15 @@
+[[ READONLY: @remote/@hubspot/growth/templates/blog-index.html ]]
+<!--
+  templateType: blog_listing
+  isAvailableForNewContent: true
+  label: Growth - blog listing
+  screenshotPath: ../images/template-previews/blog-index.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+
+    {% dnd_area "dnd_area" label="Blog listing", class="blog-listing"%}
+    {% end_dnd_area %}
+
+{% endblock body %}

@@ -1,0 +1,24 @@
+<!--
+    templateType: error_page
+    isAvailableForNewContent: true
+    label: Fivenines - 404 error
+-->
+{% set template_css = "../../css/system/system.css" %}
+{% extends "../layouts/base.html" %}
+{% include "../naming_variables.html" %}
+
+{% block body %}
+    
+<main id="error">
+    <section class="container">
+        <div class="row">
+            <div class="col-12 system-page">
+            {% module "content" path="@hubspot/rich_text", html="<h1>{{ page_not_found_headline }}</h1><p>{{ page_not_found_text }}</p>" %}
+      
+          {# Button #}
+      
+          <a href="{{ page_not_found_home_url }}" class="btn btn-primary">{{ page_not_found_button_label }}</a>
+        </div>
+    </section>
+</main>    
+{% endblock body %}

@@ -1,0 +1,40 @@
+{# shadow #}
+{%- macro shadow(horizontal_position, vertical_position, blur, spread, color) -%}
+    -webkit-box-shadow: {{horizontal_position}} {{vertical_position}} {{blur}} {{spread}} {{color}};
+       -moz-box-shadow: {{horizontal_position}} {{vertical_position}} {{blur}} {{spread}} {{color}};
+            box-shadow: {{horizontal_position}} {{vertical_position}} {{blur}} {{spread}} {{color}};
+    {%- endmacro -%}
+
+{# transition #}
+{%- macro transition(element, transition_time, easing) -%}
+    -webkit-transition: {{element}} {{transition_time}} {{easing}};
+       -moz-transition: {{element}} {{transition_time}} {{easing}};
+         -o-transition: {{element}} {{transition_time}} {{easing}};
+            transition: {{element}} {{transition_time}} {{easing}};
+    {%- endmacro -%}
+
+{# border radius #}
+{%- macro border_radius(border_radius) -%}
+    -webkit-border-radius: {{border_radius}};
+       -moz-border-radius: {{border_radius}};
+         -o-border-radius: {{border_radius}};
+            border-radius: {{border_radius}};
+{%- endmacro -%}
+
+{# linear gradient #}
+{%- macro linear_gradient(angle, color_1, position_1, color_2, position_2) -%}
+   background: {{ color_1 }};
+   background: -moz-linear-gradient({{angle}}, {{color_1}} {{position_1}}%, {{color_2}} {{position_2}}%);
+   background: -webkit-linear-gradient({{angle}}, {{color_1}} {{position_1}}%, {{color_2}} {{position_2}}%);
+   background: linear-gradient({{angle}}, {{color_1}} {{position_1}}%, {{color_2}} {{position_2}}%);
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="{{color_1}}",endColorstr="{{color_2}}",GradientType=1); 
+{%- endmacro -%}
+
+{# radial gradient #}
+{%- macro radial_gradient(color_1, position_1, color_2, position_2) -%}
+    background: {{ color_1 }};
+    background: -moz-radial-gradient(circle, {{ color_1 }} {{ position_1 }}%, {{ color_2 }} {{ position_2 }}%);
+    background: -webkit-radial-gradient(circle, {{ color_1 }} {{ position_1 }}%, {{ color_2 }} {{ position_2 }}%);
+    background: radial-gradient(circle, {{ color_1 }} {{ position_1 }}%, {{ color_2 }} {{ position_2 }}%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="{{color_1}}",endColorstr="{{color_2}}",GradientType=1); 
+ {%- endmacro -%}

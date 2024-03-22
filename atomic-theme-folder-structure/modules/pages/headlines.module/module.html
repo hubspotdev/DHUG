@@ -1,0 +1,24 @@
+{# Import headline macro #}
+{% from "../../../macros/headlines.html" import simple_headline %}
+
+{# Path shortenings #}
+{% set custom_class = module.advanced.custom_class %}
+
+{# load the default CSS file for this module #}
+{{ require_css(get_asset_url("../../css/advanced/headlines.css")) }}
+
+{# add the custom class part only if the field is not empty #}
+{% unless custom_class == null %}
+    {{ require_css(get_asset_url("../../css/custom_css/headlines.css")) }}
+{% endunless %}
+
+
+
+{# module layout #}
+{{ simple_headline(
+    module.headline, 
+    module.headline_size, 
+    module.headline_style, 
+    custom_class
+    )
+}}

@@ -1,0 +1,33 @@
+{%- import './../../../macros/buttons.html' -%}
+    
+{# Set the button aria label for accessability #}
+    {%- if module.aria_label == "" -%}
+        {% set aria_label = module.button_label %}
+    {%- else -%}
+        {% set aria_label = module.aria_label %}
+    {%- endif -%}
+
+
+{# Path shortenings #}
+{% set custom_class = module.advanced.custom_class %}
+
+{# Add the custom class part only if the field is not empty #}
+{% unless custom_class == null %}
+    {{ require_css(get_asset_url("./../../css/custom_css/buttons.css")) }}
+{% endunless %}
+
+{# class settings #}
+{%- set btn_class = "btn " ~ module.styles.button.button_style ~ " " ~ custom_class -%}
+
+{# Module layout #}
+{{ button(
+    module.icon, 
+    module.styles.icon.icon_position, 
+    module.styles.icon.icon_size, 
+    module.button_label, 
+    aria_label, 
+    module.link.href, 
+    module.link.new_tab, 
+    module.link.rel, 
+    btn_class
+)}}

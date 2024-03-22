@@ -1,0 +1,7 @@
+{%- include "./../_variables.css" -%}
+{%- include "./../_macros.css" -%}
+
+.blog .dnd-section > .row-fluid, 
+.blog .container{
+    max-width: {{ blog.container_width }}
+}

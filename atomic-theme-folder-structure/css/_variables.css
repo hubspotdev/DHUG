@@ -1,0 +1,148 @@
+{#-
+Changes in this file lead with very high probability to errors of the whole theme. 
+Proceed only if you know what you are doing!
+-#}
+
+{#- 1. General Variables -#}
+{%- set breakpoints = {
+      "":"", 
+    "sm":"480", 
+    "md":"768", 
+    "lg":"1024"
+} 
+-%}
+
+{%- set steps = ["0.25", "0.5", "0.75", "1", "1.25", "1.5", "1.75", "2", "4", "5", "6", "7"] -%}
+{%- set sides = ["left", "center", "right"] -%}
+{%- set spacings = {
+    "mtb"   : "margin", 
+    "mt"    : "margin-top", 
+    "mb"    : "margin-bottom",
+    "pt"    : "padding-top", 
+    "pb"    : "padding-bottom",
+    "ptb": "padding" 
+    }
+-%}
+
+{#- 2. Colors -#}
+{%- set color   = theme.colors -%}
+{%- set colors  = {
+    "primary"       : color.primary,
+    "secondary"     : color.secondary,
+    "light"         : color.common.light,
+    "dark"          : color.common.dark,
+    "info"          : color.system.info,
+    "warning"       : color.system.warning,
+    "success"       : color.system.success,
+    "error"         : color.system.error 
+    } 
+-%}
+
+{#- 3. Fonts -#}
+{%- set fonts = theme.fonts -%}
+{%- set base_font_size      = fonts.base_font_size -%}
+{%- set line_height         = fonts.line_height -%}
+{%- set headline_font       = fonts.headline.css -%}
+{%- set body_font           = fonts.text.css -%}
+
+
+{%- set desktop_font_sizes = {
+    "h1" : fonts.desktop.h1,
+    "h2" : fonts.desktop.h2,
+    "h3" : fonts.desktop.h3,
+    "h4" : fonts.desktop.h4,
+    "h5" : fonts.desktop.h5,
+    "h6" : fonts.desktop.h6
+}
+-%}
+
+{%- set tablet_font_sizes = {
+    "h1" : fonts.tablet.h1,
+    "h2" : fonts.tablet.h2,
+    "h3" : fonts.tablet.h3,
+    "h4" : fonts.tablet.h4,
+    "h5" : fonts.tablet.h5,
+    "h6" : fonts.tablet.h6
+}
+-%}
+
+{%- set mobile_font_sizes = {
+    "h1" : fonts.mobile.h1,
+    "h2" : fonts.mobile.h2,
+    "h3" : fonts.mobile.h3,
+    "h4" : fonts.mobile.h4,
+    "h5" : fonts.mobile.h5,
+    "h6" : fonts.mobile.h6
+}
+-%}
+{%- set link_style = {
+    "transition"        : fonts.styles.link.transition ~ "s",
+    "text_transform"    : fonts.styles.link.text_transform,
+    "def_color"         : fonts.styles.link.default.link_color.css,
+    "hov_color"         : fonts.styles.link.hover.link_color.css,
+    "foc_color"         : fonts.styles.link.focus.link_color.css,
+    "line_thickness"    : fonts.styles.link.underline_thickness ~ "px",
+    "light_line_color"  : fonts.styles.link.light_underline_color.css,
+    "dark_line_color"   : fonts.styles.link.light_underline_color.css
+}
+-%}
+
+{#- 4. Buttons -#}
+{%- set button = theme.buttons -%}
+{%- set button_defaults = {
+    "btn_radius"        : button.general_settings.radius ~ 'px',
+    "btn_transition"    : button.general_settings.transition ~ 's',
+    "btn_padding"  : button.general_settings.padding.css,
+}
+-%}
+
+{%- set primary_button = {
+    "def_bg"        :   button.primary.default.background_color.css,
+    "def_color"     :   button.primary.default.text_color.css,
+    "def_border"    :   button.primary.default.border.css,
+    "def_text"      :   button.primary.default.text_transform,
+
+    "hov_bg"        :   button.primary.hover.background_color.css,
+    "hov_color"     :   button.primary.hover.text_color.css,
+    "hov_border"    :   button.primary.hover.border.css,
+    "hov_text"      :   button.primary.hover.text_transform,
+
+    "foc_bg"        :   button.primary.focus.background_color.css,
+    "foc_color"     :   button.primary.focus.text_color.css,
+    "foc_border"    :   button.primary.focus.border.css,
+    "foc_text"      :   button.primary.focus.text_transform,
+
+    "dis_bg"        :   button.primary.disabled.background_color.css,
+    "dis_color"     :   button.primary.disabled.text_color.css,
+    "dis_border"    :   button.primary.disabled.border.css,
+    "dis_text"      :   button.primary.disabled.text_transform
+}
+-%}
+
+{%- set secondary_button = {
+    "def_bg"        :   button.secondary.default.background_color.css,
+    "def_color"     :   button.secondary.default.text_color.css,
+    "def_border"    :   button.secondary.default.border.css,
+    "def_text"      :   button.secondary.default.text_transform,
+
+    "hov_bg"        :   button.secondary.hover.background_color.css,
+    "hov_color"     :   button.secondary.hover.text_color.css,
+    "hov_border"    :   button.secondary.hover.border.css,
+    "hov_text"      :   button.secondary.hover.text_transform,
+
+    "foc_bg"        :   button.secondary.focus.background_color.css,
+    "foc_color"     :   button.secondary.focus.text_color.css,
+    "foc_border"    :   button.secondary.focus.border.css,
+    "foc_text"      :   button.secondary.focus.text_transform,
+
+    "dis_bg"        :   button.secondary.disabled.background_color.css,
+    "dis_color"     :   button.secondary.disabled.text_color.css,
+    "dis_border"    :   button.secondary.disabled.border.css,
+    "dis_text"      :   button.secondary.disabled.text_transform
+}
+-%}
+
+{#- Globals - be careful! -#}
+{%- set advanced            = theme.advanced -%}
+{%- set gutter              = advanced.col_gutter -%}
+{%- set container_width     = advanced.container_width ~ "px" -%}

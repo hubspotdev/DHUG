@@ -1,0 +1,22 @@
+<!--
+  templateType: email_subscriptions_confirmation_page
+  isAvailableForNewContent: true
+  label: Fivenines - confirmation
+-->
+{% set template_css = "../../css/system/system.css" %}
+{% extends "../layouts/base.html" %}
+{% include "../naming_variables.html" %}
+
+{% block body %}
+    
+<main id="system">
+    <section class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3 system-page card">
+                {# Subscription confirmation #}
+                {% module "subscriptions_confirmation" path="@hubspot/email_subscriptions_confirmation" %}
+            </div>
+        </div>
+    </section>
+</main>    
+{% endblock body %}

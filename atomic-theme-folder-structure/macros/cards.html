@@ -1,0 +1,33 @@
+<!--
+    templateType: none
+    isAvailableForNewContent: false
+-->
+
+{# Don't change the paths since they'll be correct once they'll be loaded into a module. #}
+{% import "./macros/headlines.html" %}
+        
+        
+{#  card layout #}
+    {% macro simple_card(card_color, custom_class, card_aria, headline, headline_size, headline_style, headline_color, image_src, text, add_button, button_link, new_tab, rel, button_label, icon_name, icon_position, icon_size, aria_label, button_class) %}
+        <article class="card simple bg-{{ card_color }} {{ custom_class }}" title="{{ headline }}">
+            
+            {# Card image #}
+            <div class="img" style="background-image:url('{{ image_src }}');"></div>
+        
+                {# Card content with embeded macro #}
+                <div class="content">
+                    {{ simple_headline(headline, headline_size, headline_style, headline_color) }}
+                <p class="description">
+                    {{ text }}
+                </p>
+
+                {# Embeded card button macro #}
+                {%- if add_button -%}
+                    <div class="button-wrapper">
+                        {{ button(icon_name, icon_position, icon_size, button_label, aria_label, button_link, new_tab, rel, button_class) }}
+                    </div>
+                {%- endif -%}
+
+            <div>
+        </article>
+    {% endmacro %}

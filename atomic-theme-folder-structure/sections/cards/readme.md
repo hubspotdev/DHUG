@@ -1,0 +1,1 @@
+For all sections with card elements 

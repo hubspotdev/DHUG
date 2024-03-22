@@ -1,0 +1,21 @@
+{#- 1. Generic -#}
+    {% include './generic/_reset.css' %}
+    {% include './generic/_normalize.css' %}
+    
+{#- 2. Layout -#}    
+    {% include "./layout/_layout.css" %}
+    
+{#- 3. Global -#}    
+    {% include "./globals/_buttons.css" %}
+    {% include "./globals/_forms.css" %}
+    {% include "./globals/_icons.css" %}
+    {% include "./globals/_typography.css" %}
+    {% include "./globals/_navigation.css" %}
+    
+{#- 4. Globals -#}
+    {% include "./partials/_headers.css" %}
+    {% include "./partials/_footers.css" %}
+    
+{#- 5. Helper -#}    
+    {% include "./helper/_utils.css" %}
+    

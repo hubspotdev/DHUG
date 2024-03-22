@@ -1,0 +1,59 @@
+{%- include "./../_variables.css" -%}
+
+
+    /* 1 Desktop spacings */
+    {%- for breakpoint, resolution in breakpoints.items() %}
+    {%- unless breakpoint == "" %}
+    /*  1.2 Mobile spacing */
+    @media screen and (min-width: {{ resolution }}px){
+        {%- for step in steps %}
+        /* {{step}}rem spacing */
+        {%- for direction, variable in spacings.items() %}
+        {%- if direction == "mtb" %}
+        .{{direction}}-{{step|cut(".")}}{ {{variable}}:{{step}}rem auto;}
+    {%- elif direction == "ptb" %}
+        .{{direction}}-{{step|cut(".")}}{ {{variable}}:{{step}}rem 0 {{step}}rem 0;}
+                {% else %}
+        .{{direction}}-{{step|cut(".")}}{ {{variable}}:{{step}}rem;}
+                {%- endif %}
+        {%- endfor %}
+        {%- endfor %}
+    }
+    {%- else %}
+    
+    {%- for step in steps %}
+    /* {{step}}rem spacing */
+    {%- for direction, variable in spacings.items() %}
+    {%- if direction == "mtb" %}
+    .{{direction}}-{{step|cut(".")}}{ {{variable}}:{{step}}rem auto;}
+    {%- elif direction == "ptb" %}
+    .{{direction}}-{{step|cut(".")}}{ {{variable}}:{{step}}rem 0 {{step}}rem 0;}
+                {% else %}
+    .{{direction}}-{{step|cut(".")}}{ {{variable}}:{{step}}rem;}
+                {%- endif %}
+            {%- endfor -%}
+        {%- endfor -%}
+    {%- endunless %}
+    {% endfor %}
+    
+    
+    /* 2. Colors */
+    {%- for name, val in colors.items() %}
+    .color-{{name}}{ color: rgb({{val.color|convert_rgb}})}
+    {%- endfor %}
+        
+    
+    /* 3. Alignment */
+    {%- for breakpoint, resolution in breakpoints.items() -%}
+        {%- unless breakpoint == "" %}
+    @media screen and (min-width:{{ resolution }}px){
+            {%- for side in sides %}
+    .text-{{breakpoint}}-{{side}},.align-{{breakpoint}}-{{side}}{text-align:{{side}};} 
+            {%- endfor %}
+        }
+    {% else %}
+    {% for side in sides -%}
+        .text-{{ side }},.align-{{ side }}{text-align:{{ side }};} 
+    {% endfor %}
+    {%- endunless %}
+    {%- endfor -%}

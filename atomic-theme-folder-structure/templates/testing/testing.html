@@ -1,0 +1,15 @@
+<!--
+    templateType: page
+    label: Testing template
+    isAvailableForNewContent: true
+-->
+{# set 'isAvailableForNewContent' to false after creating a page #}
+
+{% extends '../layouts/base.html' %} 
+
+{% block body %} 
+    {% dnd_area 'main area'%}
+        {% dnd_section %} 
+        {% end_dnd_section %} 
+    {% end_dnd_area %} 
+{% endblock body %}

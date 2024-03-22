@@ -1,0 +1,10 @@
+{%- include "./../_variables.css" -%}
+{%- include "./../_macros.css" -%}
+    
+.icon.left{
+    margin-right:.5rem;
+}
+    
+.icon.right{
+    margin-left:.5rem;
+} 

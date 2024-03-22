@@ -1,0 +1,9 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+
+{# button icon // This macro is used in all buttons(seperate module and all other modules with button functionality #}
+{%- macro btn_icon( icon_name, icon_size, icon_position ) -%}
+  <span class="icofont-{{ icon_name }} icon icofont-{{ icon_size }} {{ icon_position }}" title="{{ icon_name|replace('-', ' ') }} icon"></span>
+{%- endmacro -%}

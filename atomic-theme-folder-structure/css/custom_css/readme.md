@@ -1,0 +1,1 @@
+This folder provides predefined CSS-files for developers

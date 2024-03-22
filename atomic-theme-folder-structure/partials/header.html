@@ -1,0 +1,26 @@
+<!--
+    templateType: global_partial
+    label: Header
+    isAvailableForNewContent: false
+-->
+{% include "../../modules/_macros/icons.html" %}
+
+    <header class="header navigation" aria-label="Main Header with navigation">
+        <div class="header-inner-wrapper">
+            {# Logo #}
+            <div class="logo-outer-wrapper">
+                <figure class="logo-wrapper">
+                    <a href="{{ brand_settings.primaryLogo.link }}">
+                        <img src="{{ brand_settings.primaryLogo.src }}" alt="{{ brand_settings.primaryLogo.alt }}" aria-label="{{ brand_settings.primaryLogo.alt }}" class="logo">
+                    </a>
+                </figure>
+            </div>
+                
+            {# Navigation #}
+            <div class="nav-wrapper">
+                <nav class="main-nav">
+                    {% module 'main_navigation' path="@hubspot/menu", label="Main navigation" %}
+                </nav>
+            </div>
+        </div>
+    </header>

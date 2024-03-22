@@ -1,0 +1,55 @@
+<!--
+    templateType: page
+    label: Page template
+    isAvailableForNewContent: false
+-->
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    {% if page_meta.html_title %}
+      <title>{{ page_meta.html_title }}</title>
+    {% endif %}
+    {% if branding_favicon %}
+      <link rel="shortcut icon" href="{{ branding_favicon }}" />
+    {% endif %}
+    <meta name="description" content="{{ page_meta.meta_description }}">
+    {{ require_css(get_asset_url("../../css/main.css")) }}
+    {{ require_css(get_asset_url("../../css/theme.css")) }}
+    {% if template_css %}
+        {{ require_css(get_asset_url(template_css)) }}
+      {% endif %}
+      {{ require_js(get_asset_url("../../js/jQuery.js")) }}
+
+      {# Preconnect #}
+    <link rel="preconnect" href="https://f.hubspotusercontent-eu1.net/" />
+    <link rel="preconnect" href="https://f.hubspotusercontent-eu1.net/" crossorigin />
+    <link rel="preconnect" href="https://{{ hub_id }}.fs1.hubspotusercontent-eu1.net/" />
+    <link rel="preconnect" href="https://{{ hub_id }}.fs1.hubspotusercontent-eu1.net/" crossorigin />
+    
+    {{ standard_header_includes }}
+    {% block head_tag %}
+    {% endblock head_tag %}
+  </head>
+  <body>
+    
+    {% block header %}
+      {% global_partial path="../partials/header.html" %}
+    {% endblock header %}
+    <main>
+    {% block body %}
+      
+    {% endblock body %}
+    </main>
+    {% block footer %}
+    {% endblock footer %}
+
+    {# check if jquery is enabled in the Hub-settings - otherwise load jquery from the theme #}
+    {% unless site_settings.include_jquery %}
+      {{ require_js(get_asset_url("../../js/jQuery.js")) }}
+    {% endunless %}
+
+    {{ require_js(get_asset_url("../../js/theme.js")) }}
+    {{ standard_footer_includes }}
+  </body>
+</html>

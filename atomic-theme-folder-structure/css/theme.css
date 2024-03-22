@@ -1,0 +1,98 @@
+{%- include "./_variables.css" -%}
+{%- include "./_macros.css" -%}
+        
+        
+{#- Mobile font sizes -#}
+{% for tag, size in mobile_font_sizes.items() %}
+{{ tag }},.{{ tag }}{ font-size:{{ size }}rem; }
+{%- endfor %}
+
+{#- Tablet font sizes -#}
+@media screen and (min-width: {{ breakpoints.md }}px){
+{% for tag, size in tablet_font_sizes.items() -%}
+{{ tag }},.{{ tag }}{ font-size:{{ size }}rem; }
+{% endfor -%}
+}
+
+{#- Desktop font sizes -#}
+@media screen and (min-width: {{ breakpoints.lg }}px){
+{% for tag, size in desktop_font_sizes.items() -%}
+{{ tag }},.{{ tag }}{ font-size:{{ size }}rem; }
+{% endfor -%}
+}
+
+.btn{
+    {{ button_defaults.btn_padding }}
+}
+
+.btn.primary-btn{
+    background: {{ primary_button.def_bg }};
+    color: {{ primary_button.def_color }};
+    {{ primary_button.def_border}}
+    {%- unless primary_button.def_text == "" -%}
+        text-transform: {{ primary_button.def_text }};
+    {%- endunless -%}
+}
+
+.btn.primary-btn:hover{
+    background: {{ primary_button.hov_bg }};
+    color: {{ primary_button.hov_color }};
+    outline:{{ primary_button.hov_border}};
+    {%- unless primary_button.hov_text == "" -%}
+        text-transform: {{ primary_button.hov_text }};
+    {%- endunless -%}
+}
+
+.btn.primary-btn:focus{
+    background: {{ primary_button.foc_bg }};
+    color: {{ primary_button.foc_color }};
+    outline:{{ primary_button.foc_border }};
+    {%- unless primary_button.foc_text == "" -%}
+        text-transform: {{ primary_button.foc_text }};
+    {%- endunless -%}
+}
+
+.btn.primary-btn.disabled{
+    background: {{ primary_button.def_bg }};
+    color: {{ primary_button.def_color }};
+    {{ primary_button.def_border}}
+    {%- unless primary_button.def_text == "" -%}
+        text-transform: {{ primary_button.def_text }};
+    {%- endunless -%}
+}
+
+.btn.secondary-btn{
+    background: {{ secondary_button.def_bg }};
+    color: {{ secondary_button.def_color }};
+    outline:{{ secondary_button.def_border }};
+    {%- unless secondary_button.def_text == "" -%}
+        text-transform: {{ secondary_button.def_text }};
+    {%- endunless -%}
+}
+
+.btn.secondary-btn:hover{
+    background: {{ secondary_button.hov_bg }};
+    color: {{ secondary_button.hov_color }};
+    outline:{{ secondary_button.hov_border }};
+    {%- unless secondary_button.hov_text == "" -%}
+        text-transform: {{ secondary_button.hov_text }};
+    {%- endunless -%}
+}
+
+.btn.secondary-btn:focus{
+    background: {{ secondary_button.foc_bg }};
+    color: {{ secondary_button.foc_color }};
+    outline:{{ secondary_button.foc_border }};
+    {%- unless secondary_button.foc_text == "" -%}
+        text-transform: {{ secondary_button.foc_text }};
+    {%- endunless -%}
+}
+
+.btn.secondary-btn.disabled{
+    background: {{ secondary_button.dis_bg }};
+    color: {{ secondary_button.dis_color }};
+    outline:{{ secondary_button.dis_border }};
+    {%- unless secondary_button.dis_text == "" -%}
+        text-transform: {{ secondary_button.dis_text }};
+    {%- endunless -%}
+}

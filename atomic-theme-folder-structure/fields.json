@@ -1,0 +1,2199 @@
+[
+	{
+		"name": "colors",
+		"label": "Colors",
+		"required": false,
+		"locked": false,
+		"children": [
+			{
+				"name": "primary",
+				"label": "Primary color",
+				"required": false,
+				"locked": false,
+				"inline_help_text": "",
+				"help_text": "",
+				"type": "color",
+				"inherited_value": {
+					"property_value_paths": {
+						"color": "brand_settings.primaryColor"
+					}
+				},
+				"visibility": {
+					"hidden_subfields": {
+						"opacity": true
+					}
+				},
+				"default": {
+					"color": "#A8EB12"
+				}
+			},
+			{
+				"name": "secondary",
+				"label": "Secondary color",
+				"required": false,
+				"locked": false,
+				"inline_help_text": "",
+				"help_text": "",
+				"type": "color",
+				"inherited_value": {
+					"property_value_paths": {
+						"color": "brand_settings.colors[1]"
+					}
+				},
+				"visibility": {
+					"hidden_subfields": {
+						"opacity": true
+					}
+				},
+				"default": {
+					"color": "#0E1E33"
+				}
+			},
+			{
+				"name": "common",
+				"label": "Common colors",
+				"required": false,
+				"locked": false,
+				"children": [
+					{
+						"name": "light",
+						"label": "Light color",
+						"required": false,
+						"locked": false,
+						"inline_help_text": "",
+						"help_text": "",
+						"type": "color",
+						"visibility": {
+							"hidden_subfields": {
+								"opacity": true
+							}
+						},
+						"default": {
+							"color": "#F9FBFE"
+						}
+					},
+					{
+						"name": "dark",
+						"label": "Dark color",
+						"required": false,
+						"locked": false,
+						"inline_help_text": "",
+						"help_text": "",
+						"type": "color",
+						"visibility": {
+							"hidden_subfields": {
+								"opacity": true
+							}
+						},
+						"default": {
+							"color": "#0E1E33"
+						}
+					}
+				],
+				"type": "group",
+				"inline_help_text": "",
+				"help_text": "",
+				"default": {}
+			},
+			{
+				"name": "system",
+				"label": "System colors",
+				"required": false,
+				"locked": false,
+				"children": [
+					{
+						"name": "info",
+						"label": "Info color",
+						"required": false,
+						"locked": false,
+						"inline_help_text": "",
+						"help_text": "",
+						"type": "color",
+						"visibility": {
+							"hidden_subfields": {
+								"opacity": true
+							}
+						},
+						"default": {
+							"color": "#0AA0DB"
+						}
+					},
+					{
+						"name": "warning",
+						"label": "Warning color",
+						"required": false,
+						"locked": false,
+						"inline_help_text": "",
+						"help_text": "",
+						"type": "color",
+						"visibility": {
+							"hidden_subfields": {
+								"opacity": true
+							}
+						},
+						"default": {
+							"color": "#FFCE21"
+						}
+					},
+					{
+						"name": "success",
+						"label": "Success color",
+						"required": false,
+						"locked": false,
+						"inline_help_text": "",
+						"help_text": "",
+						"type": "color",
+						"visibility": {
+							"hidden_subfields": {
+								"opacity": true
+							}
+						},
+						"default": {
+							"color": "#4EE59E"
+						}
+					},
+					{
+						"name": "error",
+						"label": "Error color",
+						"required": false,
+						"locked": false,
+						"inline_help_text": "",
+						"help_text": "Mostly used",
+						"type": "color",
+						"visibility": {
+							"hidden_subfields": {
+								"opacity": true
+							}
+						},
+						"default": {
+							"color": "#FF4128"
+						}
+					}
+				],
+				"type": "group",
+				"inline_help_text": "",
+				"help_text": "",
+				"default": {}
+			}
+		],
+		"type": "group",
+		"inline_help_text": "",
+		"help_text": "",
+		"default": {}
+	},
+	{
+		"name": "typography",
+		"label": "Typography",
+		"required": false,
+		"locked": false,
+		"children": [
+			{
+				"name": "base_font_size",
+				"label": "Number field",
+				"required": false,
+				"locked": false,
+				"display": "text",
+				"step": 1,
+				"type": "number",
+				"min": null,
+				"suffix": "px",
+				"max": null,
+				"inline_help_text": "",
+				"help_text": "",
+				"default": 16
+			},
+			{
+				"name": "line_height",
+				"label": "Line height",
+				"required": false,
+				"locked": false,
+				"display": "slider",
+				"step": 0.05,
+				"suffix": "%",
+				"type": "number",
+				"min": 110,
+				"max": 220,
+				"inline_help_text": "",
+				"help_text": "Defines the line height. A good line-height is between 120 and 150.",
+				"default": 135
+			},
+			{
+				"name": "headlines",
+				"label": "Headlines",
+				"required": false,
+				"locked": false,
+				"inline_help_text": "",
+				"help_text": "",
+				"load_external_fonts": true,
+				"type": "font",
+				"visibility": {
+					"hidden_subfields": {
+						"size": true,
+						"color": true,
+						"underline": true
+					}
+				},
+				"default": {
+					"size": 12,
+					"font": "Lato",
+					"font_set": "GOOGLE"
+				}
+			},
+			{
+				"name": "text",
+				"label": "Text",
+				"required": false,
+				"locked": false,
+				"inline_help_text": "",
+				"help_text": "",
+				"load_external_fonts": true,
+				"type": "font",
+				"visibility": {
+					"hidden_subfields": {
+						"size": true,
+						"color": true,
+						"underline": true
+					}
+				},
+				"default": {
+					"font": "Lato",
+					"font_set": "GOOGLE"
+				}
+			},
+			{
+				"name": "desktop",
+				"label": "Desktop font sizes",
+				"required": false,
+				"locked": false,
+				"children": [
+					{
+						"name": "h1",
+						"label": "H1",
+						"required": false,
+						"locked": false,
+						"display": "text",
+						"step": 0.25,
+						"type": "number",
+						"min": 2,
+						"max": 10,
+						"suffix": "rem",
+						"inline_help_text": "",
+						"help_text": "",
+						"default": 4
+					},
+					{
+						"name": "h2",
+						"label": "H2",
+						"required": false,
+						"locked": false,
+						"display": "text",
+						"step": 0.25,
+						"type": "number",
+						"min": 2,
+						"max": 10,
+						"suffix": "rem",
+						"inline_help_text": "",
+						"help_text": "",
+						"default": 3
+					},
+					{
+						"name": "h3",
+						"label": "H3",
+						"required": false,
+						"locked": false,
+						"display": "text",
+						"step": 0.25,
+						"type": "number",
+						"min": 2,
+						"max": 10,
+						"suffix": "rem",
+						"inline_help_text": "",
+						"help_text": "",
+						"default": 2.5
+					},
+					{
+						"name": "h4",
+						"label": "H4",
+						"required": false,
+						"locked": false,
+						"display": "text",
+						"step": 0.25,
+						"type": "number",
+						"min": 1,
+						"max": 10,
+						"suffix": "rem",
+						"inline_help_text": "",
+						"help_text": "",
+						"default": 1.75
+					},
+					{
+						"name": "h5",
+						"label": "H5",
+						"required": false,
+						"locked": false,
+						"display": "text",
+						"step": 0.25,
+						"type": "number",
+						"min": 1,
+						"max": 10,
+						"suffix": "rem",
+						"inline_help_text": "",
+						"help_text": "",
+						"default": 1.25
+					},
+					{
+						"name": "h6",
+						"label": "H6",
+						"required": false,
+						"locked": false,
+						"display": "text",
+						"step": 0.25,
+						"type": "number",
+						"min": 1,
+						"max": 10,
+						"suffix": "rem",
+						"inline_help_text": "",
+						"help_text": "",
+						"default": 1.25
+					}
+				],
+				"type": "group",
+				"inline_help_text": "Font sizes are in rem. 1rem equals base font size. Example: If your base font size is 16, 2rem would be 32px",
+				"help_text": "",
+				"default": {}
+			},
+			{
+				"name": "tablet",
+				"label": "Tablet font sizes",
+				"required": false,
+				"locked": false,
+				"children": [
+					{
+						"name": "h1",
+						"label": "H1",
+						"required": false,
+						"locked": false,
+						"display": "text",
+						"step": 0.25,
+						"type": "number",
+						"min": 2,
+						"max": 10,
+						"suffix": "rem",
+						"inline_help_text": "",
+						"help_text": "",
+						"default": 4
+					},
+					{
+						"name": "h2",
+						"label": "H2",
+						"required": false,
+						"locked": false,
+						"display": "text",
+						"step": 0.25,
+						"type": "number",
+						"min": 2,
+						"max": 10,
+						"suffix": "rem",
+						"inline_help_text": "",
+						"help_text": "",
+						"default": 3
+					},
+					{
+						"name": "h3",
+						"label": "H3",
+						"required": false,
+						"locked": false,
+						"display": "text",
+						"step": 0.25,
+						"type": "number",
+						"min": 2,
+						"max": 10,
+						"suffix": "rem",
+						"inline_help_text": "",
+						"help_text": "",
+						"default": 2.5
+					},
+					{
+						"name": "h4",
+						"label": "H4",
+						"required": false,
+						"locked": false,
+						"display": "text",
+						"step": 0.25,
+						"type": "number",
+						"min": 1,
+						"max": 10,
+						"suffix": "rem",
+						"inline_help_text": "",
+						"help_text": "",
+						"default": 1.75
+					},
+					{
+						"name": "h5",
+						"label": "H5",
+						"required": false,
+						"locked": false,
+						"display": "text",
+						"step": 0.25,
+						"type": "number",
+						"min": 1,
+						"max": 10,
+						"suffix": "rem",
+						"inline_help_text": "",
+						"help_text": "",
+						"default": 1.25
+					},
+					{
+						"name": "h6",
+						"label": "H6",
+						"required": false,
+						"locked": false,
+						"display": "text",
+						"step": 0.25,
+						"type": "number",
+						"min": 1,
+						"max": 10,
+						"suffix": "rem",
+						"inline_help_text": "",
+						"help_text": "",
+						"default": 1.25
+					}
+				],
+				"type": "group",
+				"inline_help_text": "Font sizes are in rem. 1rem equals base font size. Example: If your base font size is 16, 2rem would be 32px",
+				"help_text": "",
+				"default": {}
+			},
+			{
+				"name": "mobile",
+				"label": "Mobile font sizes",
+				"required": false,
+				"locked": false,
+				"children": [
+					{
+						"name": "h1",
+						"label": "H1",
+						"required": false,
+						"locked": false,
+						"display": "text",
+						"step": 0.25,
+						"type": "number",
+						"min": 2,
+						"max": 10,
+						"suffix": "rem",
+						"inline_help_text": "",
+						"help_text": "",
+						"default": 4
+					},
+					{
+						"name": "h2",
+						"label": "H2",
+						"required": false,
+						"locked": false,
+						"display": "text",
+						"step": 0.25,
+						"type": "number",
+						"min": 2,
+						"max": 10,
+						"suffix": "rem",
+						"inline_help_text": "",
+						"help_text": "",
+						"default": 3
+					},
+					{
+						"name": "h3",
+						"label": "H3",
+						"required": false,
+						"locked": false,
+						"display": "text",
+						"step": 0.25,
+						"type": "number",
+						"min": 2,
+						"max": 10,
+						"suffix": "rem",
+						"inline_help_text": "",
+						"help_text": "",
+						"default": 2.5
+					},
+					{
+						"name": "h4",
+						"label": "H4",
+						"required": false,
+						"locked": false,
+						"display": "text",
+						"step": 0.25,
+						"type": "number",
+						"min": 1,
+						"max": 10,
+						"suffix": "rem",
+						"inline_help_text": "",
+						"help_text": "",
+						"default": 1.75
+					},
+					{
+						"name": "h5",
+						"label": "H5",
+						"required": false,
+						"locked": false,
+						"display": "text",
+						"step": 0.25,
+						"type": "number",
+						"min": 1,
+						"max": 10,
+						"suffix": "rem",
+						"inline_help_text": "",
+						"help_text": "",
+						"default": 1.25
+					},
+					{
+						"name": "h6",
+						"label": "H6",
+						"required": false,
+						"locked": false,
+						"display": "text",
+						"step": 0.25,
+						"type": "number",
+						"min": 1,
+						"max": 10,
+						"suffix": "rem",
+						"inline_help_text": "",
+						"help_text": "",
+						"default": 1.25
+					}
+				],
+				"type": "group",
+				"inline_help_text": "Font sizes are in rem. 1rem equals base font size. Example: If your base font size is 16, 2rem would be 32px",
+				"help_text": "",
+				"default": {}
+			},
+			{
+				"name": "styles",
+				"label": "Text styles",
+				"required": false,
+				"locked": false,
+				"children": [
+					{
+						"name": "light_text",
+						"label": "Light text color",
+						"required": false,
+						"locked": false,
+						"inline_help_text": "",
+						"help_text": "",
+						"type": "color",
+						"inherited_value": {
+							"property_value_paths": {
+								"color": "theme.colors.common.light.color"
+							}
+						},
+						"default": {
+							"color": "#ebedef",
+							"opacity": 100
+						}
+					},
+					{
+						"name": "dark_text",
+						"label": "Dark text color",
+						"required": false,
+						"locked": false,
+						"inline_help_text": "",
+						"help_text": "",
+						"type": "color",
+						"inherited_value": {
+							"property_value_paths": {
+								"color": "theme.colors.common.dark.color"
+							}
+						},
+						"default": {
+							"color": "#001d3d",
+							"opacity": 100
+						}
+					},
+					{
+						"name": "link",
+						"label": "Link style",
+						"required": false,
+						"locked": false,
+						"children": [
+							{
+								"name": "transition",
+								"label": "Transition",
+								"required": false,
+								"locked": false,
+								"display": "slider",
+								"step": 0.01,
+								"type": "number",
+								"min": 0,
+								"max": 0.4,
+								"inline_help_text": "",
+								"help_text": "",
+								"default": 0.26
+							},
+							{
+								"name": "text_transform",
+								"label": "Text transform",
+								"required": false,
+								"locked": false,
+								"display": "radio",
+								"inline_help_text": "",
+								"help_text": "",
+								"choices": [
+									["", "No transform"],
+									["lowercase", "Lowercase"],
+									["uppercase", "Uppercase"]
+								],
+								"type": "choice",
+								"placeholder": "",
+								"default": ""
+							},
+							{
+								"name": "default",
+								"label": "Default",
+								"required": false,
+								"locked": false,
+								"children": [
+									{
+										"name": "link_color",
+										"label": "Link color",
+										"required": false,
+										"locked": false,
+										"inline_help_text": "",
+										"help_text": "",
+										"type": "color",
+										"inherited_value": {
+											"property_value_paths": {
+												"color": "theme.colors.primary.color"
+											}
+										},
+										"default": {
+											"color": "#ffffff",
+											"opacity": 100
+										}
+									}
+								],
+								"type": "group",
+								"inline_help_text": "",
+								"help_text": "",
+								"default": {}
+							},
+							{
+								"name": "hover",
+								"label": "Hover",
+								"required": false,
+								"locked": false,
+								"children": [
+									{
+										"name": "link_color",
+										"label": "Link color",
+										"required": false,
+										"locked": false,
+										"inline_help_text": "",
+										"help_text": "",
+										"type": "color",
+										"inherited_value": {
+											"property_value_paths": {
+												"color": "theme.colors.secondary.color"
+											}
+										},
+										"default": {
+											"color": "#ffffff",
+											"opacity": 100
+										}
+									}
+								],
+								"type": "group",
+								"inline_help_text": "",
+								"help_text": "",
+								"default": {}
+							},
+							{
+								"name": "focus",
+								"label": "Focus",
+								"required": false,
+								"locked": false,
+								"children": [
+									{
+										"name": "link_color",
+										"label": "Link color",
+										"required": false,
+										"locked": false,
+										"inline_help_text": "",
+										"help_text": "",
+										"type": "color",
+										"inherited_value": {
+											"property_value_paths": {
+												"color": "theme.colors.secondary.color"
+											}
+										},
+										"default": {
+											"color": "#ffffff",
+											"opacity": 100
+										}
+									}
+								],
+								"type": "group",
+								"inline_help_text": "",
+								"help_text": "",
+								"default": {}
+							}
+						],
+						"type": "group",
+						"inline_help_text": "",
+						"help_text": "",
+						"default": {}
+					}
+				],
+				"type": "group",
+				"inline_help_text": "",
+				"help_text": "",
+				"default": {}
+			}
+		],
+		"type": "group",
+		"inline_help_text": "",
+		"help_text": "",
+		"default": {}
+	},
+	{
+		"name": "header",
+		"label": "Header",
+		"required": false,
+		"locked": false,
+		"children": [
+			{
+				"name": "fixed_header",
+				"label": "Fixed header",
+				"id": "header.fixed_header",
+				"required": false,
+				"locked": false,
+				"type": "boolean",
+				"inline_help_text": "If enabled all headers will stay fixed on top of the browser window",
+				"help_text": "",
+				"default": false
+			},
+			{
+				"name": "background_color",
+				"label": "Background color",
+				"required": false,
+				"locked": false,
+				"inline_help_text": "",
+				"help_text": "",
+				"type": "color",
+				"inherited_value": {
+					"property_value_paths": {
+						"color": "theme.colors.common.light.color"
+					}
+				},
+				"default": {
+					"color": "#ffffff",
+					"opacity": 100
+				}
+			},
+			{
+				"name": "height",
+				"label": "Header height",
+				"required": false,
+				"locked": false,
+				"display": "slider",
+				"suffix": "px",
+				"step": 1,
+				"type": "number",
+				"min": null,
+				"max": 160,
+				"inline_help_text": "",
+				"help_text": "",
+				"default": 90
+			},
+			{
+				"name": "padding",
+				"label": "Padding",
+				"required": false,
+				"locked": false,
+				"type": "spacing",
+				"inline_help_text": "Only top and bottom padding are used",
+				"help_text": "",
+				"visibility": {
+					"hidden_subfields": {
+						"margin": true
+					}
+				},
+				"default": {
+					"padding": {
+						"top": {
+							"value": 16,
+							"units": "px"
+						},
+						"bottom": {
+							"value": 16,
+							"units": "px"
+						}
+					}
+				}
+			},
+			{
+				"name": "add_shadow",
+				"label": "Add shadow",
+				"id": "header.add_shadow",
+				"required": false,
+				"locked": false,
+				"type": "boolean",
+				"inline_help_text": "",
+				"help_text": "",
+				"default": true
+			},
+			{
+				"name": "shadow_settings",
+				"label": "Shadow settings",
+				"required": false,
+				"locked": false,
+				"children": [
+					{
+						"name": "horizontal_position",
+						"label": "Horizontal Position",
+						"required": false,
+						"locked": false,
+						"display": "slider",
+						"step": 1,
+						"type": "number",
+						"min": -100,
+						"max": 100,
+						"inline_help_text": "negative numbers are on the left; positive numbers are on the right",
+						"help_text": "",
+						"default": 0
+					},
+					{
+						"name": "vertical_position",
+						"label": "Vertical Position",
+						"required": false,
+						"locked": false,
+						"display": "slider",
+						"step": 1,
+						"type": "number",
+						"min": -100,
+						"max": 100,
+						"inline_help_text": "negative numbers are on the top; positive numbers are on the bottom",
+						"help_text": "",
+						"default": 8
+					},
+					{
+						"name": "spread",
+						"label": "Spread",
+						"required": false,
+						"locked": false,
+						"display": "slider",
+						"step": 1,
+						"type": "number",
+						"min": 0,
+						"max": 100,
+						"inline_help_text": "",
+						"help_text": "",
+						"default": 0
+					},
+					{
+						"name": "blur_radius",
+						"label": "Blur Radius",
+						"required": false,
+						"locked": false,
+						"display": "slider",
+						"step": 1,
+						"type": "number",
+						"min": 0,
+						"max": 100,
+						"inline_help_text": "",
+						"help_text": "",
+						"default": 32
+					},
+					{
+						"name": "shadow_color",
+						"label": "Shadow Color",
+						"required": false,
+						"locked": false,
+						"inline_help_text": "",
+						"help_text": "",
+						"type": "color",
+						"inherited_value": {
+							"property_value_paths": {
+								"color": "theme.colors.common.dark.color"
+							}
+						},
+						"default": {
+							"color": "#001d3d",
+							"opacity": 5
+						}
+					}
+				],
+				"type": "group",
+				"inline_help_text": "",
+				"help_text": "",
+				"visibility": {
+					"controlling_field": "header.add_shadow",
+					"controlling_value_regex": "true",
+					"operator": "EQUAL"
+				},
+				"default": {}
+			}
+		],
+		"type": "group",
+		"inline_help_text": "",
+		"help_text": "",
+		"default": {}
+	},
+	{
+		"name": "buttons",
+		"label": "Buttons",
+		"required": false,
+		"locked": false,
+		"children": [
+			{
+				"name": "general_settings",
+				"label": "General settings",
+				"required": false,
+				"locked": false,
+				"children": [
+					{
+						"name": "radius",
+						"label": "Border radius",
+						"required": false,
+						"locked": false,
+						"display": "text",
+						"step": 1,
+						"suffix": "px",
+						"type": "number",
+						"min": null,
+						"max": null,
+						"inline_help_text": "",
+						"help_text": "",
+						"default": "32"
+					},
+					{
+						"name": "transition",
+						"label": "Transition",
+						"required": false,
+						"locked": false,
+						"display": "slider",
+						"step": 0.01,
+						"type": "number",
+						"min": 0,
+						"max": 0.4,
+						"inline_help_text": "",
+						"help_text": "",
+						"default": 0.26
+					},
+					{
+						"name": "padding",
+						"label": "Padding",
+						"required": false,
+						"locked": false,
+						"type": "spacing",
+						"inline_help_text": "Set the padding of the default button size. Different sizes like \"big-button\" or \"small-button\" will be generated automatically",
+						"help_text": "",
+						"default": {
+							"padding": {
+								"top": { "value": 8, "units": "px" },
+								"bottom": { "value": 8, "units": "px" },
+								"left": { "value": 40, "units": "px" },
+								"right": { "value": 40, "units": "px" }
+							}
+						},
+						"visibility": {
+							"hidden_subfields": {
+								"margin": true
+							}
+						}
+					}
+				],
+				"type": "group",
+				"inline_help_text": "",
+				"help_text": "",
+				"default": {}
+			},
+			{
+				"name": "primary",
+				"label": "Primary button",
+				"required": false,
+				"locked": false,
+				"children": [
+					{
+						"name": "default",
+						"label": "Default",
+						"required": false,
+						"locked": false,
+						"children": [
+							{
+								"name": "background_color",
+								"label": "Background color",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "color",
+								"inherited_value": {
+									"property_value_paths": {
+										"color": "theme.colors.primary.color"
+									}
+								},
+								"default": {
+									"color": "#ffd60a",
+									"opacity": 100
+								}
+							},
+							{
+								"name": "text_color",
+								"label": "Text color",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "color",
+								"inherited_value": {
+									"property_value_paths": {
+										"color": "theme.colors.common.light.color"
+									}
+								},
+								"default": {
+									"color": "#ffffff",
+									"opacity": 100
+								}
+							},
+							{
+								"name": "border",
+								"label": "Border",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "border",
+								"allow_custom_border_sides": true
+							},
+							{
+								"name": "text_transform",
+								"label": "Text transform",
+								"required": false,
+								"locked": false,
+								"display": "radio",
+								"inline_help_text": "",
+								"help_text": "",
+								"choices": [
+									["", "No transform"],
+									["lowercase", "Lowercase"],
+									["uppercase", "Uppercase"]
+								],
+								"type": "choice",
+								"placeholder": "",
+								"default": ""
+							}
+						],
+						"type": "group",
+						"inline_help_text": "",
+						"help_text": "The styling for default button state",
+						"default": {}
+					},
+					{
+						"name": "hover",
+						"label": "Hover",
+						"required": false,
+						"locked": false,
+						"children": [
+							{
+								"name": "background_color",
+								"label": "Background color",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "color",
+								"inherited_value": {
+									"property_value_paths": {
+										"color": "theme.colors.common.dark.color"
+									}
+								},
+								"default": {
+									"color": "#ffd60a",
+									"opacity": 100
+								}
+							},
+							{
+								"name": "text_color",
+								"label": "Text color",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "color",
+								"inherited_value": {
+									"property_value_paths": {
+										"color": "theme.colors.common.light.color"
+									}
+								},
+								"default": {
+									"color": "#ffffff",
+									"opacity": 100
+								}
+							},
+							{
+								"name": "border",
+								"label": "Border",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "border",
+								"allow_custom_border_sides": true
+							},
+							{
+								"name": "text_transform",
+								"label": "Text transform",
+								"required": false,
+								"locked": false,
+								"display": "radio",
+								"inline_help_text": "",
+								"help_text": "",
+								"choices": [
+									["", "No transform"],
+									["lowercase", "Lowercase"],
+									["uppercase", "Uppercase"]
+								],
+								"type": "choice",
+								"placeholder": "",
+								"default": ""
+							}
+						],
+						"type": "group",
+						"inline_help_text": "",
+						"help_text": "The styling for hover button state",
+						"default": {}
+					},
+					{
+						"name": "focus",
+						"label": "Focus",
+						"required": false,
+						"locked": false,
+						"children": [
+							{
+								"name": "background_color",
+								"label": "Background color",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "color",
+								"inherited_value": {
+									"property_value_paths": {
+										"color": "theme.colors.secondary.color"
+									}
+								},
+								"default": {
+									"color": "#ffd60a",
+									"opacity": 100
+								}
+							},
+							{
+								"name": "text_color",
+								"label": "Text color",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "color",
+								"inherited_value": {
+									"property_value_paths": {
+										"color": "theme.colors.common.dark.color"
+									}
+								},
+								"default": {
+									"color": "#ffffff",
+									"opacity": 100
+								}
+							},
+							{
+								"name": "border",
+								"label": "Border",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "border",
+								"allow_custom_border_sides": true,
+								"inherited_value": {
+									"property_value_paths": {
+										"top.color": "theme.colors.common.dark.color",
+										"right.color": "theme.colors.common.dark.color",
+										"bottom.color": "theme.colors.common.dark.color",
+										"left.color": "theme.colors.common.dark.color"
+									}
+								},
+								"default": {
+									"top": {
+										"width": {
+											"value": 2,
+											"units": "px"
+										},
+										"opacity": 100,
+										"style": "solid",
+										"color": "#516747"
+									},
+									"right": {
+										"width": {
+											"value": 2,
+											"units": "px"
+										},
+										"opacity": 100,
+										"style": "solid",
+										"color": "#516747"
+									},
+									"bottom": {
+										"width": {
+											"value": 2,
+											"units": "px"
+										},
+										"opacity": 100,
+										"style": "solid",
+										"color": "#516747"
+									},
+									"left": {
+										"width": {
+											"value": 2,
+											"units": "px"
+										},
+										"opacity": 100,
+										"style": "solid",
+										"color": "#516747"
+									}
+								}
+							},
+							{
+								"name": "text_transform",
+								"label": "Text transform",
+								"required": false,
+								"locked": false,
+								"display": "radio",
+								"inline_help_text": "",
+								"help_text": "",
+								"choices": [
+									["", "No transform"],
+									["lowercase", "Lowercase"],
+									["uppercase", "Uppercase"]
+								],
+								"type": "choice",
+								"placeholder": "",
+								"default": ""
+							}
+						],
+						"type": "group",
+						"inline_help_text": "",
+						"help_text": "The styling for focus button state",
+						"default": {}
+					},
+					{
+						"name": "disabled",
+						"label": "Disabled",
+						"required": false,
+						"locked": false,
+						"children": [
+							{
+								"name": "background_color",
+								"label": "Background color",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "color",
+								"default": {
+									"color": "#c3c3c3",
+									"opacity": 100
+								}
+							},
+							{
+								"name": "text_color",
+								"label": "Text color",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "color",
+								"default": {
+									"color": "#868686",
+									"opacity": 100
+								}
+							},
+							{
+								"name": "border",
+								"label": "Border",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "border",
+								"allow_custom_border_sides": true,
+								"default": {
+									"top": {
+										"width": {
+											"value": 2,
+											"units": "px"
+										},
+										"opacity": 100,
+										"style": "solid",
+										"color": "#868686"
+									},
+									"right": {
+										"width": {
+											"value": 2,
+											"units": "px"
+										},
+										"opacity": 100,
+										"style": "solid",
+										"color": "#868686"
+									},
+									"bottom": {
+										"width": {
+											"value": 2,
+											"units": "px"
+										},
+										"opacity": 100,
+										"style": "solid",
+										"color": "#868686"
+									},
+									"left": {
+										"width": {
+											"value": 2,
+											"units": "px"
+										},
+										"opacity": 100,
+										"style": "solid",
+										"color": "#868686"
+									}
+								}
+							},
+							{
+								"name": "text_transform",
+								"label": "Text transform",
+								"required": false,
+								"locked": false,
+								"display": "radio",
+								"inline_help_text": "",
+								"help_text": "",
+								"choices": [
+									["", "No transform"],
+									["lowercase", "Lowercase"],
+									["uppercase", "Uppercase"]
+								],
+								"type": "choice",
+								"placeholder": "",
+								"default": ""
+							}
+						],
+						"type": "group",
+						"inline_help_text": "",
+						"help_text": "The styling for disabled button state",
+						"default": {}
+					}
+				],
+				"type": "group",
+				"inline_help_text": "",
+				"help_text": "",
+				"default": {}
+			},
+			{
+				"name": "secondary",
+				"label": "Secondary button",
+				"required": false,
+				"locked": false,
+				"children": [
+					{
+						"name": "default",
+						"label": "Default",
+						"required": false,
+						"locked": false,
+						"children": [
+							{
+								"name": "background_color",
+								"label": "Background color",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "color",
+								"inherited_value": {
+									"property_value_paths": {
+										"color": "theme.colors.secondary.color"
+									}
+								},
+								"default": {
+									"color": "#ffd60a",
+									"opacity": 100
+								}
+							},
+							{
+								"name": "text_color",
+								"label": "Text color",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "color",
+								"inherited_value": {
+									"property_value_paths": {
+										"color": "theme.colors.common.dark.color"
+									}
+								},
+								"default": {
+									"color": "#ffffff",
+									"opacity": 100
+								}
+							},
+							{
+								"name": "border",
+								"label": "Border",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "border",
+								"allow_custom_border_sides": true
+							},
+							{
+								"name": "text_transform",
+								"label": "Text transform",
+								"required": false,
+								"locked": false,
+								"display": "radio",
+								"inline_help_text": "",
+								"help_text": "",
+								"choices": [
+									["", "No transform"],
+									["lowercase", "Lowercase"],
+									["uppercase", "Uppercase"]
+								],
+								"type": "choice",
+								"placeholder": "",
+								"default": ""
+							}
+						],
+						"type": "group",
+						"inline_help_text": "",
+						"help_text": "The styling for default button state",
+						"default": {}
+					},
+					{
+						"name": "hover",
+						"label": "Hover",
+						"required": false,
+						"locked": false,
+						"children": [
+							{
+								"name": "background_color",
+								"label": "Background color",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "color",
+
+								"default": {
+									"color": "#ffd60a",
+									"opacity": 100
+								},
+								"inherited_value": {
+									"property_value_paths": {
+										"color": "theme.colors.primary.color"
+									}
+								}
+							},
+							{
+								"name": "text_color",
+								"label": "Text color",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "color",
+								"inherited_value": {
+									"property_value_paths": {
+										"color": "theme.colors.common.light.color"
+									}
+								},
+								"default": {
+									"color": "#ffffff",
+									"opacity": 100
+								}
+							},
+							{
+								"name": "border",
+								"label": "Border",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "border",
+								"allow_custom_border_sides": true
+							},
+							{
+								"name": "text_transform",
+								"label": "Text transform",
+								"required": false,
+								"locked": false,
+								"display": "radio",
+								"inline_help_text": "",
+								"help_text": "",
+								"choices": [
+									["", "No transform"],
+									["lowercase", "Lowercase"],
+									["uppercase", "Uppercase"]
+								],
+								"type": "choice",
+								"placeholder": "",
+								"default": ""
+							}
+						],
+						"type": "group",
+						"inline_help_text": "",
+						"help_text": "The styling for hover button state",
+						"default": {}
+					},
+					{
+						"name": "focus",
+						"label": "Focus",
+						"required": false,
+						"locked": false,
+						"children": [
+							{
+								"name": "background_color",
+								"label": "Background color",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "color",
+								"inherited_value": {
+									"property_value_paths": {
+										"color": "theme.colors.secondary.color"
+									}
+								},
+								"default": {
+									"color": "#ffd60a",
+									"opacity": 100
+								}
+							},
+							{
+								"name": "text_color",
+								"label": "Text color",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "color",
+								"inherited_value": {
+									"property_value_paths": {
+										"color": "theme.colors.common.dark.color"
+									}
+								},
+								"default": {
+									"color": "#ffffff",
+									"opacity": 100
+								}
+							},
+							{
+								"name": "border",
+								"label": "Border",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "border",
+								"allow_custom_border_sides": true,
+								"inherited_value": {
+									"property_value_paths": {
+										"top.color": "theme.colors.common.dark.color",
+										"right.color": "theme.colors.common.dark.color",
+										"bottom.color": "theme.colors.common.dark.color",
+										"left.color": "theme.colors.common.dark.color"
+									}
+								},
+								"default": {
+									"top": {
+										"width": {
+											"value": 2,
+											"units": "px"
+										},
+										"opacity": 100,
+										"style": "solid",
+										"color": "#516747"
+									},
+									"right": {
+										"width": {
+											"value": 2,
+											"units": "px"
+										},
+										"opacity": 100,
+										"style": "solid",
+										"color": "#516747"
+									},
+									"bottom": {
+										"width": {
+											"value": 2,
+											"units": "px"
+										},
+										"opacity": 100,
+										"style": "solid",
+										"color": "#516747"
+									},
+									"left": {
+										"width": {
+											"value": 2,
+											"units": "px"
+										},
+										"opacity": 100,
+										"style": "solid",
+										"color": "#516747"
+									}
+								}
+							},
+							{
+								"name": "text_transform",
+								"label": "Text transform",
+								"required": false,
+								"locked": false,
+								"display": "radio",
+								"inline_help_text": "",
+								"help_text": "",
+								"choices": [
+									["", "No transform"],
+									["lowercase", "Lowercase"],
+									["uppercase", "Uppercase"]
+								],
+								"type": "choice",
+								"placeholder": "",
+								"default": ""
+							}
+						],
+						"type": "group",
+						"inline_help_text": "",
+						"help_text": "The styling for focus button state",
+						"default": {}
+					},
+					{
+						"name": "disabled",
+						"label": "Disabled",
+						"required": false,
+						"locked": false,
+						"children": [
+							{
+								"name": "background_color",
+								"label": "Background color",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "color",
+								"default": {
+									"color": "#c3c3c3",
+									"opacity": 100
+								}
+							},
+							{
+								"name": "text_color",
+								"label": "Text color",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "color",
+								"default": {
+									"color": "#868686",
+									"opacity": 100
+								}
+							},
+							{
+								"name": "border",
+								"label": "Border",
+								"required": false,
+								"locked": false,
+								"inline_help_text": "",
+								"help_text": "",
+								"type": "border",
+								"allow_custom_border_sides": true,
+								"default": {
+									"top": {
+										"width": {
+											"value": 2,
+											"units": "px"
+										},
+										"opacity": 100,
+										"style": "solid",
+										"color": "#868686"
+									},
+									"right": {
+										"width": {
+											"value": 2,
+											"units": "px"
+										},
+										"opacity": 100,
+										"style": "solid",
+										"color": "#868686"
+									},
+									"bottom": {
+										"width": {
+											"value": 2,
+											"units": "px"
+										},
+										"opacity": 100,
+										"style": "solid",
+										"color": "#868686"
+									},
+									"left": {
+										"width": {
+											"value": 2,
+											"units": "px"
+										},
+										"opacity": 100,
+										"style": "solid",
+										"color": "#868686"
+									}
+								}
+							},
+							{
+								"name": "text_transform",
+								"label": "Text transform",
+								"required": false,
+								"locked": false,
+								"display": "radio",
+								"inline_help_text": "",
+								"help_text": "",
+								"choices": [
+									["", "No transform"],
+									["lowercase", "Lowercase"],
+									["uppercase", "Uppercase"]
+								],
+								"type": "choice",
+								"placeholder": "",
+								"default": ""
+							}
+						],
+						"type": "group",
+						"inline_help_text": "",
+						"help_text": "The styling for disabled button state",
+						"default": {}
+					}
+				],
+				"type": "group",
+				"inline_help_text": "",
+				"help_text": "",
+				"default": {}
+			}
+		],
+		"type": "group",
+		"inline_help_text": "",
+		"help_text": "",
+		"default": {}
+	},
+	{
+		"name": "forms",
+		"label": "Forms",
+		"required": false,
+		"locked": false,
+		"children": [
+			{
+				"name": "border_color",
+				"label": "Border color",
+				"required": false,
+				"locked": false,
+				"inline_help_text": "",
+				"help_text": "",
+				"type": "color",
+				"inherited_value": {
+					"property_value_paths": {
+						"color": "theme.colors.common.dark.color"
+					}
+				},
+				"default": {
+					"color": "#0E1E33",
+					"opacity": 100
+				}
+			},
+			{
+				"name": "border",
+				"label": "Border",
+				"required": false,
+				"locked": false,
+				"inline_help_text": "",
+				"help_text": "",
+				"type": "border",
+				"allow_custom_border_sides": true
+			},
+			{
+				"name": "add_shadow",
+				"label": "Add shadow",
+				"id": "forms.add_shadow",
+				"required": false,
+				"locked": false,
+				"type": "boolean",
+				"inline_help_text": "",
+				"help_text": "",
+				"default": true
+			},
+			{
+				"name": "transition",
+				"label": "Transition",
+				"required": false,
+				"locked": false,
+				"display": "slider",
+				"step": 0.05,
+				"type": "number",
+				"min": 0,
+				"max": 1,
+				"suffix": "s",
+				"inline_help_text": "Transition time",
+				"help_text": "",
+				"default": "0.2"
+			},
+			{
+				"name": "shadow_settings",
+				"label": "Shadow settings",
+				"required": false,
+				"locked": false,
+				"children": [
+					{
+						"name": "horizontal_position",
+						"label": "Horizontal Position",
+						"required": false,
+						"locked": false,
+						"display": "slider",
+						"step": 1,
+						"type": "number",
+						"min": -100,
+						"max": 100,
+						"inline_help_text": "negative numbers are on the left; positive numbers are on the right",
+						"help_text": "",
+						"default": 0
+					},
+					{
+						"name": "vertical_position",
+						"label": "Vertical Position",
+						"required": false,
+						"locked": false,
+						"display": "slider",
+						"step": 1,
+						"type": "number",
+						"min": -100,
+						"max": 100,
+						"inline_help_text": "negative numbers are on the top; positive numbers are on the bottom",
+						"help_text": "",
+						"default": 8
+					},
+					{
+						"name": "spread",
+						"label": "Spread",
+						"required": false,
+						"locked": false,
+						"display": "slider",
+						"step": 1,
+						"type": "number",
+						"min": 0,
+						"max": 100,
+						"inline_help_text": "",
+						"help_text": "",
+						"default": 0
+					},
+					{
+						"name": "blur_radius",
+						"label": "Blur Radius",
+						"required": false,
+						"locked": false,
+						"display": "slider",
+						"step": 1,
+						"type": "number",
+						"min": 0,
+						"max": 100,
+						"inline_help_text": "",
+						"help_text": "",
+						"default": 32
+					},
+					{
+						"name": "shadow_color",
+						"label": "Shadow Color",
+						"required": false,
+						"locked": false,
+						"inline_help_text": "",
+						"help_text": "",
+						"type": "color",
+						"inherited_value": {
+							"property_value_paths": {
+								"color": "theme.colors.common.dark.color"
+							}
+						},
+						"default": {
+							"color": "#001d3d",
+							"opacity": 5
+						}
+					}
+				],
+				"type": "group",
+				"inline_help_text": "",
+				"help_text": "",
+				"visibility": {
+					"controlling_field": "forms.add_shadow",
+					"controlling_value_regex": "true",
+					"operator": "EQUAL"
+				},
+				"default": {}
+			}
+		],
+		"type": "group",
+		"inline_help_text": "",
+		"help_text": "",
+		"default": {}
+	},
+	{
+		"name": "modules",
+		"label": "Modules",
+		"required": false,
+		"locked": false,
+		"children": [
+			{
+				"name": "cards",
+				"label": "Cards",
+				"required": false,
+				"locked": false,
+				"children": [],
+				"type": "group",
+				"inline_help_text": "",
+				"help_text": "",
+				"default": {}
+			},
+			{
+				"name": "sliders",
+				"label": "Sliders",
+				"required": false,
+				"locked": false,
+				"children": [],
+				"type": "group",
+				"inline_help_text": "",
+				"help_text": "",
+				"default": {}
+			},
+			{
+				"name": "accordions",
+				"label": "Accordions",
+				"required": false,
+				"locked": false,
+				"children": [],
+				"type": "group",
+				"inline_help_text": "",
+				"help_text": "",
+				"default": {}
+			}
+		],
+		"type": "group",
+		"inline_help_text": "",
+		"help_text": "",
+		"default": {}
+	},
+	{
+		"name": "blog",
+		"label": "Blog",
+		"required": false,
+		"locked": false,
+		"children": [
+			{
+				"name": "container_width",
+				"label": "Container width",
+				"required": false,
+				"locked": false,
+				"display": "slider",
+				"suffix": "px",
+				"step": 1,
+				"type": "number",
+				"min": 768,
+				"max": 1600,
+				"inline_help_text": "",
+				"help_text": "",
+				"default": 1400
+			}
+		],
+		"type": "group",
+		"inline_help_text": "",
+		"help_text": "",
+		"default": {}
+	},
+	{
+		"name": "system_pages",
+		"label": "System pages",
+		"required": false,
+		"locked": false,
+		"children": [],
+		"type": "group",
+		"inline_help_text": "",
+		"help_text": "",
+		"default": {}
+	},
+	{
+		"name": "footer",
+		"label": "Footer",
+		"required": false,
+		"locked": false,
+		"children": [
+			{
+				"name": "background_color",
+				"label": "Background color",
+				"required": false,
+				"locked": false,
+				"inline_help_text": "",
+				"help_text": "",
+				"type": "color",
+				"inherited_value": {
+					"property_value_paths": {
+						"color": "theme.colors.common.dark.color"
+					}
+				},
+				"default": {
+					"color": "#0E1E33",
+					"opacity": 100
+				}
+			},
+			{
+				"name": "text_color",
+				"label": "Text color",
+				"required": false,
+				"locked": false,
+				"inline_help_text": "",
+				"help_text": "",
+				"type": "color",
+				"inherited_value": {
+					"property_value_paths": {
+						"color": "theme.colors.common.light.color"
+					}
+				},
+				"default": {
+					"color": "#F9FBFE",
+					"opacity": 100
+				}
+			},
+			{
+				"name": "border",
+				"label": "Border",
+				"required": false,
+				"locked": false,
+				"inline_help_text": "",
+				"help_text": "",
+				"type": "border",
+				"allow_custom_border_sides": true,
+				"inherited_value": {
+					"property_value_paths": {
+						"top.color": "theme.colors.primary.color",
+						"right.color": "theme.colors.primary.color",
+						"bottom.color": "theme.colors.primary.color",
+						"left.color": "theme.colors.primary.color"
+					}
+				},
+				"default": {
+					"top": {
+						"width": {
+							"value": 0,
+							"units": "px"
+						},
+						"opacity": 100,
+						"style": "solid",
+						"color": "#516747"
+					},
+					"right": {
+						"width": {
+							"value": 0,
+							"units": "px"
+						},
+						"opacity": 100,
+						"style": "solid",
+						"color": "#516747"
+					},
+					"bottom": {
+						"width": {
+							"value": 5,
+							"units": "px"
+						},
+						"opacity": 100,
+						"style": "solid",
+						"color": "#516747"
+					},
+					"left": {
+						"width": {
+							"value": 0,
+							"units": "px"
+						},
+						"opacity": 100,
+						"style": "solid",
+						"color": "#516747"
+					}
+				}
+			}
+		],
+		"type": "group",
+		"inline_help_text": "",
+		"help_text": "",
+		"default": {}
+	},
+	{
+		"name": "advanced",
+		"label": "Advanced settings",
+		"required": false,
+		"locked": false,
+		"children": [
+			{
+				"name": "container_width",
+				"label": "Container width",
+				"required": false,
+				"locked": false,
+				"display": "slider",
+				"step": 1,
+				"type": "number",
+				"min": 900,
+				"max": 1600,
+				"inline_help_text": "",
+				"help_text": "Set the width of your content in pixels",
+				"default": 1440
+			},
+			{
+				"name": "col_gutter",
+				"label": "Gutter",
+				"required": false,
+				"locked": false,
+				"display": "slider",
+				"step": 1,
+				"suffix": "px",
+				"type": "number",
+				"min": 16,
+				"max": 48,
+				"inline_help_text": "Defines the spacing <strong>between</strong> columns",
+				"help_text": "",
+				"default": 32
+			},
+			{
+				"name": "row_gutter",
+				"label": "Row spacing",
+				"required": false,
+				"locked": false,
+				"display": "slider",
+				"step": 1,
+				"suffix": "px",
+				"type": "number",
+				"min": 16,
+				"max": 48,
+				"inline_help_text": "Defines the spacing <strong>between</strong> rows",
+				"help_text": "",
+				"default": 48
+			},
+			{
+				"name": "enable_animations",
+				"label": "Enable animations",
+				"id": "advanced.enable_animations",
+				"required": false,
+				"locked": false,
+				"type": "boolean",
+				"inline_help_text": "",
+				"help_text": "",
+				"default": false
+			}
+		],
+		"type": "group",
+		"inline_help_text": "",
+		"help_text": "",
+		"default": {}
+	}
+]

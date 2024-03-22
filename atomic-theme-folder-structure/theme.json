@@ -1,0 +1,22 @@
+{
+	"label": "Atomic folder stucture",
+	"preview_path": null,
+	"screenshot_path": null,
+	"enable_domain_stylesheets": false,
+	"is_available_for_new_content": true,
+	"responsive_breakpoints": [
+		{
+			"name": "mobile",
+			"mediaQuery": "@media (max-width: 480px)",
+			"previewWidth": {
+				"value": 480
+			}
+		}
+	],
+	"author": {
+		"name": "Anton Bujanowski",
+		"email": "",
+		"company": ""
+	},
+	"hidden_modules": []
+}

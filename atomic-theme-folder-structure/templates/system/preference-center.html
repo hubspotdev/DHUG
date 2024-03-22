@@ -1,0 +1,25 @@
+<!--
+  templateType: email_subscription_preferences_page
+  isAvailableForNewContent: true
+  label: Fivenines - subscription preferences
+-->
+{% set template_css = "../../css/system/system.css" %}
+{% extends "../layouts/base.html" %}
+{% include "../naming_variables.html" %}
+
+{% block body %}
+    
+<main id="system">
+    <section class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3">
+                <div class="system-page card">
+                    {# Subscription preferences form #}
+                        {% module "subscription_preferences" path="@hubspot/email_subscriptions" %}
+                </div>
+            </div>
+        </div>
+    </section>
+</main>    
+{% endblock body %}
+

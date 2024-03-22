@@ -1,0 +1,27 @@
+<!--
+templateType: "none"
+isAvailableForNewContent: false
+-->
+{% include "./icons.html" %}
+
+    {# Macro for generating the button label with icon #}
+    {% macro button(icon_name, icon_position, icon_size, label, aria_label, link, new_tab, rel, class) %}
+        <a href="{{ link }}" class="{{ class }}" title="{{ aria_label }} button" {% if new_tab %}target="_blank"{% endif %}{% if rel %} rel="{{ rel }}"{% endif %}>
+            
+            {# Check if the icon_name is set - else don't show an icon #}
+            {% if icon_name %}
+
+                {# Display the icon depending on the position setting #}
+                {% if icon_position == "left" %}
+                    {{ btn_icon(icon_name, icon_size, icon_position) }}
+                    <span class="btn-label">{{ label }}</span>
+                {% elif icon_position == "right" %}
+                    <span class="btn-label">{{ label }}</span>
+                    {{ btn_icon(icon_name, icon_size, icon_position) }}
+                {% endif %}
+            {% else %}
+                {{ label }}
+            {% endif %}
+            
+        </a>
+    {% endmacro %}

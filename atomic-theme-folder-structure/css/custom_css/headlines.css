@@ -1,0 +1,9 @@
+{# This file is for custom class usage. If you're using the custom class in modules put predefined styling here #}
+
+{# example:
+
+    .headline.CUSTOM-CLASS{
+        text-transform:uppercase
+    }
+    
+#}
