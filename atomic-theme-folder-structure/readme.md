@@ -1,0 +1,1 @@
+This is the folder-structure Anton talked and showed in the march 24 DHUG. If you want to learn more, here's the link: <a href="https://www.youtube.com/watch?v=dBJZetIHRJM" target="_blank">March 24 DHUG on YouTube</a>
