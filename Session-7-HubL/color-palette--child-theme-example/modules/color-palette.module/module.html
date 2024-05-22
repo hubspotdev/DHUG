@@ -1,0 +1,18 @@
+<!-- module html  -->
+{% if module.override_dark or module.override_medium or module.override_light %}
+  {% require_css %}
+    <style>
+      html {
+        {{"--color--dark: " + module.color_dark.color ~ ";" if module.override_dark }}
+        {{"--color--medium: " + module.color_medium.color ~ ";" if module.override_medium }}
+        {{"--color--light: " + module.color_light.color ~ ";" if module.override_light }}
+      }
+      </style>
+  {% end_require_css %}
+{% endif %}
+
+<div class="color-container">
+  <div class="color-dark"></div>
+  <div class="color-med"></div>
+  <div class="color-light"></div>
+</div>

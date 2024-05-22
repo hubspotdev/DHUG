@@ -1,0 +1,30 @@
+[
+  {
+    "name": "override_dark",
+    "label": "Override dark color",
+    "required": false,
+    "locked": false,
+    "type": "boolean",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": false
+  },
+  {
+    "name": "dark_color",
+    "label": "Dark color",
+    "required": false,
+    "locked": false,
+    "inline_help_text": "",
+    "help_text": "",
+    "type": "color",
+    "visibility": {
+      "controlling_field": "override_dark",
+      "controlling_value_regex": true,
+      "operator": "EQUAL"
+    },
+    "default": {
+      "color": "#660000",
+      "opacity": 100
+    }
+  }
+]

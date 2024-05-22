@@ -1,0 +1,26 @@
+<!-- module html  -->
+
+{% macro build_card(config) %}
+  <div class="cs-card" style="{{ '--color--dark:' ~ module.dark_color.color ~ ";" if module.override_dark }}">
+    <div class="image-container">
+      <h4>This is a graphic</h4>
+    </div>
+    <div class="content-container">
+      <div class="industry-container">
+        <span class="industry">Swingin tunes</span>
+      </div>
+      <h3>This is a lorem heading</h3>
+    </div>
+  </div>
+{% endmacro %}
+
+
+<div class="cs-cards-container" style="text-align: center;">
+  {{ build_card() }}
+  {{ build_card() }}
+  {{ build_card() }}
+</div>
+
+
+
+

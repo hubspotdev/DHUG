@@ -1,0 +1,81 @@
+{% macro to_hsl_string() %}
+
+  {% set decimal_colors = theme.primary_color.rgb|regex_replace('[^,\\d]+',"")|split(",")|map("float") %}
+
+  {% set R = decimal_colors[0] %}
+  {% set G = decimal_colors[1] %}
+  {% set B = decimal_colors[2] %}
+
+  {% set R_normalized = (R / 255)|round(2) %}
+  {% set G_normalized = (G / 255)|round(2) %}
+  {% set B_normalized = (B / 255)|round(2) %}
+  {% set rgb_normalized_array = [R_normalized, G_normalized, B_normalized]|sort(true, false)%}
+
+  {% set lightness = (rgb_normalized_array[0] + rgb_normalized_array[2]) / 2|round(2) %}
+
+  {% set abs_val =  (2 * lightness - 1)|abs %}
+  {# (max - min) / (1 - |2 * L - 1|) #}
+  {% set hsl_saturation = (rgb_normalized_array[0] - rgb_normalized_array[2]) / (1 - abs_val) %}
+  {% set sorted_max_less_min = (rgb_normalized_array[0] - rgb_normalized_array[2])|round(2) %}
+  {# H = 60 * (G - B) / (max(R, G, B) - min(R, G, B)) #}
+  {# https://changingminds.org/explanations/perception/visual/hsl.htm #}
+  {% if rgb_normalized_array[0] == 0 %}
+    {% set hue = 0 %}
+  {% elif rgb_normalized_array[0] == R_normalized %}
+    {% set hue =  60 * (((G_normalized - B_normalized) % 6) / sorted_max_less_min)%}
+  {% elif rgb_normalized_array[0] == G_normalized %}
+    {% set hue = 60 * (2.0 + (B_normalized - R_normalized) / sorted_max_less_min) %}
+  {% else %}
+    {% set hue = 60 * (4.0 + (R_normalized - G_normalized) / sorted_max_less_min) %}
+  {% endif %}
+  {% if hue < 0 %}
+    {% set hue = 360 + hue %}
+  {% endif %}
+
+  {% set hsl_final_string = hue|round(2) ~ "," ~ hsl_saturation ~ "," ~ lightness %}
+  {{- hsl_final_string -}}
+{% endmacro %}
+
+
+{% macro generate_color_palette(hsl_array) %}
+  {% if hsl_array[2] < .45 %}
+    {% set color_light = "hsl({{hsl_array[0]}}deg {{ (hsl_array[1] * .5) * 100 }}%  90%)"%}
+    {% set color_medium = "hsl({{hsl_array[0]}}deg {{ (hsl_array[1] * .72) * 100 }}% 65%)"%}
+    {% set color_dark = theme.primary_color.rgba %}
+    {% set color_accent_one = color_medium %}
+    {% set color_accent_two = color_light %}
+
+  {% elif .45 < hsl_array[2] and hsl_array[2] < .85 %}
+    {% set adjusted_hsl_array = [hsl_array[0], hsl_array[1] * 1.28, (hsl_array[2] * .66) ] %}
+    {% set color_light = "hsl({{hsl_array[0]}}deg {{ (adjusted_hsl_array[1] * .5) * 100 }}% 90%)"%}
+    {% set color_medium = theme.primary_color.rgba %}
+    {% set color_dark = "hsl({{hsl_array[0]}}deg {{ adjusted_hsl_array[1] * 100 }}% 27%)"%}
+    {% set color_accent_one = color_dark %}
+
+  {% else %}
+    {% set adjusted_hsl_array = [hsl_array[0], (hsl_array[1] * 2.6), (hsl_array[2] * .4)] %}
+    {% if adjusted_hsl_array[1] * .72 >= 1 %}
+      {% set color_medium = "hsl({{hsl_array[0]}}deg 88% 69%)" %}
+    {% else %}
+      {% set color_medium = "hsl({{hsl_array[0]}}deg {{ (adjusted_hsl_array[1] * .72) * 100 }}% {{ (adjusted_hsl_array[2] * 1.58) * 100 }}%)" %}
+    {% endif %}
+
+    {% if adjusted_hsl_array[1] >= 1 %}
+      {% set color_dark = "hsl({{hsl_array[0]}}deg 98% {{ adjusted_hsl_array[2] * 100 }}%)" %}
+    {% else %}
+      {% set color_dark = "hsl({{hsl_array[0]}}deg {{ adjusted_hsl_array[1] * 100 }}% {{ adjusted_hsl_array[2] * 100 }}%)" %}
+    {% endif %}
+    {% set color_light = theme.primary_color.rgba %}
+  {% endif %}
+
+  {% require_css %}
+      <style>
+        html {
+          --color--primary: {{ theme.primary_color.color }};
+          --color--dark: {{ color_dark }};
+          --color--medium: {{ color_medium }};
+          --color--light: {{ color_light }};
+        }
+      </style>
+  {% end_require_css %}
+{% endmacro %}

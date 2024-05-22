@@ -1,0 +1,21 @@
+.color-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 100%;
+  gap: 15px;
+}
+.color-container div {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
+.color-container .color-dark {
+  background-color: var(--color--dark);
+}
+.color-container .color-light {
+  background-color: var(--color--light);
+}
+.color-container .color-med {
+  background-color: var(--color--medium);
+}
