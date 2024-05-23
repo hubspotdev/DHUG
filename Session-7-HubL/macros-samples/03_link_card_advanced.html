@@ -1,0 +1,166 @@
+{# link_card - v02
+ # Creates a linked card component with a title, description, and optional image.
+ #
+ # @param {String, optional} instance_id - A unique identifier for this card instance
+ # @param {String} heading - The card's title
+ # @param {String, Optional} subhead - A subtitle located after the main title
+ # @param {String} description - Preview text for the card's destination
+ # @param {Dict} link - URL the card should link to, formatted as a link field
+ # @param {Dict} featured_image - Featured image data, shaped like an image field
+ # @param {String, Optional} classes - Additional classes to add to the card
+ # @param {String, Optional} styles - Additional inline styles
+ #}
+{%- macro link_card(
+  instance_id="", 
+  heading="", 
+  subhead="", 
+  description="", 
+  read_more_label="Read More", 
+  link={}, 
+  featured_image={},
+  classes="",
+  styles="") 
+-%}
+  {% call validate_params(
+    macro_name="link_card",
+    instance_id=(instance_id, "str", false),
+    heading=(heading, "str", true),
+    subhead=(subhead, "str", false),
+    description=(description, "str", true),
+    read_more_label=(read_more_label, "str", true),
+    link=(link, "dict", true),
+    featured_image=(featured_image, "dict", true),
+    classes=(classes, "str", false),
+    styles=(styles, "str", false)
+  ) %}
+
+  {# ===== MACRO LOGIC ===== #}
+  {%- set use_instance_id = instance_id is truthy -%}
+  {%- set use_subhead = subhead is truthy -%}
+  {%- set use_featured_image = featured_image is truthy -%}
+  {%- set use_classes = classes is truthy -%}
+  {%- set use_styles = styles is truthy -%}
+
+  {% set rel = [] %}
+  {% do rel.append('noopener') if link.open_in_new_tab %}
+  {% do rel.append('nofollow') if link.no_follow %}
+  {% set use_rel = rel|length > 0 %}
+
+  {# ===== MARKUP ===== #}
+  <div
+       {%- if use_instance_id %}
+       id="{{ instance_id }}" 
+       {% endif -%}
+       class="[ link-card ][ {{ classes if use_classes }} ]"
+       {%- if use_styles %}
+       style="{{ styles }}"
+       {% endif -%}>
+    {% if use_featured_image %}
+      <img
+           class="link-card__image"
+           src="{{ featured_image.src }}"
+           alt="{{ featured_image.alt }}"
+           width="{{ featured_image.width}}"
+           height="{{ featured_image.height }}"
+           loading="lazy">
+    {% endif %}
+    <h3 class="link-card__heading">{{ heading }}</h3>
+    {% if use_subhead %}
+    <p class="link-card__subhead">{{ subhead }}</p>
+    {% endif %}
+    <p class="link-card__description">{{ description }}</p>
+    <div class="link-card__read-more" aria-hidden>{{ read_more_label }}</div>
+    <a 
+       class="link-card__link"
+       href="{{ link.url.href }}"
+       {%- if use_rel %}
+       rel="{{ rel|join(' ') }}"
+       {% endif -%}
+       >
+      <span class="sr-only">{{ read_more_label }}.</span>
+    </a>
+  </div>
+  {% endcall %}
+{% endmacro -%}
+
+
+
+{# ========== DEBUG TOOLS ========== #}
+
+
+{# validate_params
+ # Accepts a macro name and list of param requirements as arguments, and a macro
+ # to be rendered as a caller. Renders the macro if valid, and outputs an error
+ # if invalid.
+ #
+ # @param {String} macro_name - The name of the macro being tested.
+ # @kwargs {Tuple} Paramaters to be checked are passed in the form of a keyworded
+ # tuple, in the form of: param_name=(param_val, data_type, is_required)
+ #}
+{% macro validate_params(macro_name) %}
+  {# ===== PRIVATE MACROS ===== #}
+  {% macro param_err(param_data) -%}
+      {%- if param_data[2] is truthy and param_data[0] is not truthy %}
+        {%- set error_message = "Required parameter of type `" ~ param_data[1] ~ "` missing or false." %}
+      {%- else -%}
+        {%- set error_message = "Parameter requires type of " ~ param_data[1] ~ ". Actual type: " ~ type(param_data[0]) %}
+      {%- endif -%}
+      {{ error_message }}
+  {%- endmacro %}
+
+  {# Has very specific whitespace requirements — your formatter will wreck this.
+   # Must return empty string '' with no whitespace when test fails. #}
+  {% macro require_type(val, type) -%}
+    {%- do -%}
+      {%- set type_matches = type(val) == type ? true : '' -%}
+    {%- enddo -%}{{- type_matches -}}
+  {%- endmacro %}
+  
+
+  {# ===== LOGIC ===== #}
+  {%- do %}
+    {% set bad_params = [] %}
+
+    {# Since validate_params has no defined params, all passed values will be in kwargs or varargs. #}
+    {% for param_name, param_data in kwargs.items() %}
+      {% set correct_type = require_type(param_data[0], param_data[1]) is truthy %}
+      {% set required_present = param_data[2] ? param_data[0] is truthy : true %}
+      
+      {% if not correct_type or not required_present %}
+        {% do bad_params.append((param_name, param_err(param_data))) %}
+      {% endif %}
+    {% endfor %}
+  {% enddo -%}
+  
+  {# ===== RETURN VALUE ===== #}
+  {% if bad_params|length > 0 %}
+    {{ debug_log("Missing or improperly typed parameter in macro " ~ macro_name, bad_params) }}
+  {% else %}
+    {{ caller() }}
+  {% endif %}
+{% endmacro %}
+
+
+
+{# debug_log
+ # Logs messages to the console and adds an error notification to the page.
+ #
+ # @param {String} message - The main message to display.
+ # @param {Array, optional} errors - A list of more detailed errors to support the main error message.
+ #}
+{% macro debug_log(message, errors) %}
+  {# Log the error to the browser console if dev flags are set in the URL #}
+  {% if request.query_dict["hsDebug"] is defined or request.query_dict["developerMode"] is defined %}
+    {% require_js %}
+      <script>console.error("TEMPLATE ERROR: {{ message }} {{- '\n' ~ errors|join("\n") if errors|length > 0 }}")</script>
+    {% end_require_js %}
+  {% endif %}
+
+  {# Render an error message to the page if in an editor context. #}
+  {% if is_in_editor or is_in_previewer %}
+  <div class="debug-message">
+    <p class="debug-heading">ERROR</p>
+    <p>{{ message }}. {{- '\n' ~ errors|join("\n") if errors|length > 0 }}</p>
+  </div>
+  {% endif %}
+{% endmacro %}

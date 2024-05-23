@@ -1,0 +1,51 @@
+{#- CSS TRANSITION PREFIXER
+- from HubL Documentation
+- Source: https://developers.hubspot.com/docs/cms/hubl/variables-macros-syntax
+-#}
+{% macro trans(value) %}
+-webkit-transition: {{value}};
+-moz-transition: {{value}};
+-o-transition: {{value}};
+-ms-transition: {{value}};
+transition: {{value}};
+{% endmacro %}
+
+
+{{ trans("color 250ms linear") }}
+{% set output = trans("color 250ms linear") %}
+
+{# Output:
+# -webkit-transition: color 250ms linear;
+# -moz-transition: color 250ms linear;
+# -o-transition: color 250ms linear;
+# -ms-transition: color 250ms linear;
+# transition: color 250ms linear;
+#}
+
+
+
+
+{# ELEVATION CARD
+# A simple caller macro for placing content on a raised card.
+#}
+{% macro elevation(level) %}
+<div class="elevation-{{ level }}">
+    {{ caller() }}
+</div>
+{% endmacro %}
+
+
+{# All of the content in this block gets rendered where caller() is placed
+# in the block above. #}
+{% call elevation("md") %}
+<h2>Any sort of block content can go inside of a caller.</h2>
+<ul>
+    {% for i in range(2) %}
+    <li>That includes loops, conditionals, imports, and even other macros.</li>
+    {% endfor %}
+</ul>
+<p>
+    You can access the macro's scope from the caller, meaning I can access {{ level }}
+    just like I would in the macro definition.
+</p>
+{% endcall %}
