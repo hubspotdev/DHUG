@@ -1,0 +1,91 @@
+/*** Only for demo ***/
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+body{
+  font-family: "Lexend Deca", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+h2{
+  font-weight:500;
+  margin-top:6rem;
+}
+
+/*** Demo Button styles ***/
+.btn{
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  padding:.75rem 2rem;
+  border-radius:.75rem;
+  transition: all .25s ease-in-out;
+  text-decoration:none;
+}
+
+.btn-primary, 
+.btn-primary:visited{
+  border: 2px solid transparent;
+  background-color: #2e475d;
+  color: #b7ecec;
+}
+
+.btn-primary:hover{
+  border: 2px solid transparent;
+  background-color: #b7ecec;
+  color: #2e475d;
+}
+
+.btn-primary:focus{
+  border: 2px solid #ff7a59;
+  background-color: #ffaf9b;
+  color: #ff7a59;
+}
+
+.btn-secondary, 
+.btn-secondary:visited{
+  border: 2px solid #2e475d;
+  background-color:none;
+  color: #2e475d;
+}
+
+.btn-secondary:hover{
+  border: 2px solid #2e475d;
+  background-color: #b7ecec;
+  color: #2e475d;
+}
+
+.btn-secondary:focus{
+  border: 2px solid #57d2d2;
+  background-color: #2e475d;
+  color: #57d2d2;
+}
+
+/*** Demo image ***/
+
+img.image{
+  width:auto;
+  height:400px;
+  margin:3rem;
+}
+
+/*** Demo info box ***/
+
+.text{
+  padding:2rem;
+  border-radius:1rem;
+  font-weight:bold;
+  font-size:1.25rem;
+}
+
+.info{
+  background-color:rgba(87, 210, 210, .3);
+  border:3px solid #57d2d2;
+  color: #57d2d2;
+}
+
+.warning{
+  background-color:rgba(236, 171, 62, .3);
+  border:3px solid #ecab3e;
+  color: #ecab3e;
+}

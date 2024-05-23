@@ -1,0 +1,55 @@
+{%- set breakpoints = {
+  "":"", 
+  "sm":"480", 
+  "md":"768", 
+  "lg":"1024",
+  "big":"1400"
+  } 
+-%}
+
+{%- set spacings = {
+  "mtb":"margin", 
+  "mt":"margin-top", 
+  "mb":"margin-bottom", 
+  "pt":"padding-top", 
+  "pb":"padding-bottom", 
+  "ptb": "padding" 
+  }
+-%}
+
+{%- set steps = ["0.25", "0.5", "0.75", "1", "1.25", "1.5", "2", "5"] -%}
+
+{#- 1. Spacings -#}
+/* 1 Desktop spacings */
+{%- for breakpoint, resolution in breakpoints.items() %}
+  {%- unless breakpoint == "" %}
+/*  1.2 {{ breakpoint }} spacing */
+@media screen and (min-width: {{ resolution }}px){
+      {%- for step in steps %}
+/* {{step}}rem spacing */
+        {%- for direction, variable in spacings.items() %}
+          {%- if direction == "mtb" %}
+ .{{direction}}-{{breakpoint}}-{{step|cut(".")}}{ {{variable}}:{{step}}rem auto; }
+          {%- elif direction == "ptb" %}
+ .{{direction}}-{{breakpoint}}-{{step|cut(".")}}{ {{variable}}:{{step}}rem 0 {{step}}rem 0; }
+          {%- else %}
+ .{{direction}}-{{breakpoint}}-{{step|cut(".")}}{ {{variable}}:{{step}}rem; }
+          {%- endif %}
+      {%- endfor %}
+  {%- endfor %}
+}
+  {%- else %}
+      {%- for step in steps %}
+/* {{step}}rem spacing */
+        {%- for direction, variable in spacings.items() %}
+          {%- if direction == "mtb" %}
+.{{direction}}-{{step|cut(".")}}{ {{variable}}:{{step}}rem auto; }
+          {%- elif direction == "ptb" %}
+.{{direction}}-{{step|cut(".")}}{ {{variable}}:{{step}}rem 0 {{step}}rem 0; }
+          {%- else %}
+.{{direction}}-{{step|cut(".")}}{ {{variable}}:{{step}}rem; }
+          {%- endif %}
+        {%- endfor -%}
+     {% endfor -%}
+  {%- endunless %}
+{% endfor %}
