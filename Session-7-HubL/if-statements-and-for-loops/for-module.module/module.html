@@ -1,0 +1,85 @@
+{# This module contains the basics about for and while loops
+
+a for-loop is a very powerful way to display the same code over and over. 
+1. Basic for-loop
+
+{% for X in Y %}
+do something for each instance of Y
+{% endfor %}
+
+#}
+
+{# simple button #}
+<div class="button-wrapper-outer">
+  <h2>
+    Simple buttons
+  </h2>
+  <div class="button-wrapper">
+    {% for single_button in module.buttons %}
+    {% set href = single_button.link.url.href %}
+      {% if single_button.link.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+      {% endif %}
+      <a href="{{ href }}"	class="btn" {% if single_button.link.open_in_new_tab %}target="_blank"{% endif %}	{% if single_button.link.rel %}rel="{{ single_button.link.rel|escape_attr }}"{% endif %}>
+        {{ single_button.button_label }}
+      </a>
+    {% endfor %}
+  </div>
+</div>
+{# styled button #}
+<div class="button-wrapper-outer">
+  <h2>
+    Styled buttons
+  </h2>
+  <div class="button-wrapper">
+    {% for single_button in module.styled_buttons %}
+    {% set href = single_button.link.url.href %}
+    {% if single_button.link.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+    {% endif %}
+    <a href="{{ href }}"	class="btn btn-{{ single_button.styling }}" {% if single_button.link.open_in_new_tab %}target="_blank"{% endif %}	{% if single_button.link.rel %}rel="{{ single_button.link.rel|escape_attr }}"{% endif %}>
+      {{ single_button.button_label }}
+    </a>
+    {% endfor %}
+  </div>
+</div>
+
+{# styled button automatic classes #}
+<div class="button-wrapper-outer">
+  <h2>
+    Styled buttons with cycling classes
+  </h2>
+  <div class="button-wrapper">
+    {% for single_button in module.cycling_styled_buttons %}
+    {% set href = single_button.link.url.href %}
+    {% if single_button.link.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+    {% endif %}
+    <a href="{{ href }}"	class="btn btn-{% cycle "primary","secondary" %}" {% if single_button.link.open_in_new_tab %}target="_blank"{% endif %}	{% if single_button.link.rel %}rel="{{ single_button.link.rel|escape_attr }}"{% endif %}>
+      {{ single_button.button_label }}
+    </a>
+    {% endfor %}
+  </div>
+</div>
+
+
+{# styled button with global option #}
+<div class="button-wrapper-outer">
+  <h2>
+    Styled buttons with global styling
+  </h2>
+  <div class="button-wrapper">
+    {# seting the button class #}
+    {% set button_class = module.style.button_style %}
+    
+    {% for single_button in module.global_styled_buttons %}
+      {% set href = single_button.link.url.href %}
+      {% if single_button.link.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+      {% endif %}
+      <a href="{{ href }}"	class="btn btn-{{ button_class }}" {% if single_button.link.open_in_new_tab %}target="_blank"{% endif %}	{% if single_button.link.rel %}rel="{{ single_button.link.rel|escape_attr }}"{% endif %}>
+        {{ single_button.button_label }}
+      </a>
+    {% endfor %}
+  </div>
+</div>

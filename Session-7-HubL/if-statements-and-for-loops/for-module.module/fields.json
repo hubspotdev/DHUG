@@ -1,0 +1,276 @@
+[
+	{
+		"children": [
+			{
+				"allow_new_line": false,
+				"default": "Apply as a DHUG speaker",
+				"display_width": null,
+				"id": "12b644b0-8cb7-490e-aafa-281706326ee1",
+				"label": "Button label",
+				"locked": false,
+				"name": "button_label",
+				"required": false,
+				"show_emoji_picker": false,
+				"type": "text",
+				"validation_regex": ""
+			},
+			{
+				"default": {
+					"url": {
+						"content_id": null,
+						"href": "https://developer-hug.com/speak",
+						"type": "EXTERNAL"
+					},
+					"open_in_new_tab": false,
+					"no_follow": false
+				},
+				"display_width": null,
+				"id": "6c236654-b268-3a0c-deaf-7a9957e655c5",
+				"label": "Link",
+				"locked": false,
+				"name": "link",
+				"required": false,
+				"show_advanced_rel_options": false,
+				"supported_types": ["EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER"],
+				"type": "link"
+			}
+		],
+		"default": [
+			{
+				"button_label": "Apply as a DHUG speaker",
+				"link": {
+					"url": {
+						"content_id": null,
+						"href": "https://developer-hug.com/speak",
+						"type": "EXTERNAL"
+					},
+					"open_in_new_tab": false,
+					"no_follow": false
+				}
+			}
+		],
+		"display_width": null,
+		"expanded": false,
+		"group_occurrence_meta": null,
+		"id": "9d485564-604d-0223-d446-7c739ec687cf",
+		"label": "Buttons",
+		"locked": false,
+		"name": "buttons",
+		"occurrence": {
+			"default": 1,
+			"sorting_label_field": "12b644b0-8cb7-490e-aafa-281706326ee1"
+		},
+		"required": false,
+		"tab": "CONTENT",
+		"type": "group"
+	},
+	{
+		"children": [
+			{
+				"allow_new_line": false,
+				"default": "Apply as a DHUG speaker",
+				"display_width": null,
+				"id": "9a1f2dbc-274b-4d5c-68f5-43fd8a659d97",
+				"label": "Button label",
+				"locked": false,
+				"name": "button_label",
+				"required": false,
+				"show_emoji_picker": false,
+				"type": "text",
+				"validation_regex": ""
+			},
+			{
+				"default": {
+					"url": {
+						"content_id": null,
+						"href": "https://developer-hug.com/speak",
+						"type": "EXTERNAL"
+					},
+					"open_in_new_tab": false,
+					"no_follow": false
+				},
+				"display_width": null,
+				"id": "4accd312-bafd-d1c7-5dfb-97032f0a9225",
+				"label": "Link",
+				"locked": false,
+				"name": "link",
+				"required": false,
+				"show_advanced_rel_options": false,
+				"supported_types": ["EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER"],
+				"type": "link"
+			},
+			{
+				"choices": [
+					["primary", "Primary"],
+					["secondary", "Secondary"]
+				],
+				"default": "primary",
+				"display": "radio",
+				"display_width": null,
+				"id": "a51b1e55-f253-58c1-cb02-67c49a480d04",
+				"label": "Styling",
+				"locked": false,
+				"multiple": false,
+				"name": "styling",
+				"preset": null,
+				"reordering_enabled": true,
+				"required": false,
+				"type": "choice"
+			}
+		],
+		"default": [],
+		"display_width": null,
+		"expanded": false,
+		"group_occurrence_meta": null,
+		"id": "488a9efb-1d82-8c50-f84a-952e090c39b8",
+		"label": "Styled buttons",
+		"locked": false,
+		"name": "styled_buttons",
+		"occurrence": {
+			"sorting_label_field": "12b644b0-8cb7-490e-aafa-281706326ee1"
+		},
+		"required": false,
+		"tab": "CONTENT",
+		"type": "group"
+	},
+	{
+		"children": [
+			{
+				"allow_new_line": false,
+				"default": "Apply as a DHUG speaker",
+				"display_width": null,
+				"id": "8bbd3f57-f26d-cb6e-3b38-a9269fdb273a",
+				"label": "Button label",
+				"locked": false,
+				"name": "button_label",
+				"required": false,
+				"show_emoji_picker": false,
+				"type": "text",
+				"validation_regex": ""
+			},
+			{
+				"default": {
+					"url": {
+						"content_id": null,
+						"href": "https://developer-hug.com/speak",
+						"type": "EXTERNAL"
+					},
+					"open_in_new_tab": false,
+					"no_follow": false
+				},
+				"display_width": null,
+				"id": "d539c75a-3993-09e5-fdca-0134dfedf311",
+				"label": "Link",
+				"locked": false,
+				"name": "link",
+				"required": false,
+				"show_advanced_rel_options": false,
+				"supported_types": ["EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER"],
+				"type": "link"
+			}
+		],
+		"default": [],
+		"display_width": null,
+		"expanded": false,
+		"group_occurrence_meta": null,
+		"id": "a898855e-8e31-979c-9ee6-73b0946774f2",
+		"label": "Cycling styled buttons",
+		"locked": false,
+		"name": "cycling_styled_buttons",
+		"occurrence": {
+			"sorting_label_field": "12b644b0-8cb7-490e-aafa-281706326ee1"
+		},
+		"required": false,
+		"tab": "CONTENT",
+		"type": "group"
+	},
+	{
+		"children": [
+			{
+				"allow_new_line": false,
+				"default": "Apply as a DHUG speaker",
+				"display_width": null,
+				"id": "e3dca97b-181b-1dbf-0eef-30f76cc390d4",
+				"label": "Button label",
+				"locked": false,
+				"name": "button_label",
+				"required": false,
+				"show_emoji_picker": false,
+				"type": "text",
+				"validation_regex": ""
+			},
+			{
+				"default": {
+					"url": {
+						"content_id": null,
+						"href": "https://developer-hug.com/speak",
+						"type": "EXTERNAL"
+					},
+					"open_in_new_tab": false,
+					"no_follow": false
+				},
+				"display_width": null,
+				"id": "718e4435-7c9a-4d2e-d3f6-def0f6da0fc0",
+				"label": "Link",
+				"locked": false,
+				"name": "link",
+				"required": false,
+				"show_advanced_rel_options": false,
+				"supported_types": ["EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER"],
+				"type": "link"
+			},
+			{
+				"choices": [
+					["global", "Global"],
+					["primary", "Primary"],
+					["secondary", "Secondary"]
+				],
+				"default": "",
+				"display": "radio",
+				"display_width": null,
+				"id": "b6cc045e-c890-76d7-0a13-a87ba82a50de",
+				"label": "Styling",
+				"locked": false,
+				"multiple": false,
+				"name": "styling",
+				"preset": null,
+				"reordering_enabled": true,
+				"required": false,
+				"type": "choice"
+			}
+		],
+		"default": [],
+		"display_width": null,
+		"expanded": false,
+		"group_occurrence_meta": null,
+		"id": "64d920bc-6b25-95fc-b4e6-264e852ad20b",
+		"label": "Global styled buttons",
+		"locked": false,
+		"name": "global_styled_buttons",
+		"occurrence": {
+			"sorting_label_field": "12b644b0-8cb7-490e-aafa-281706326ee1"
+		},
+		"required": false,
+		"tab": "CONTENT",
+		"type": "group"
+	},
+	{
+		"type": "choice",
+		"id": "c195de6d-f85f-c8e7-a8b9-d8385e2fd6eb",
+		"display": "select",
+		"inline_help_text": "I'm using <a href=\"https://phosphoricons.com/\" target=\"_blank\">Phosphor icons</a> for this example but you can use any SVG code",
+		"choices": [
+			[
+				"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"32\" fill=\"#000000\" viewBox=\"0 0 256 256\"><path d=\"M232,104a56.06,56.06,0,0,0-56-56H136a24,24,0,0,1,24-24,8,8,0,0,0,0-16,40,40,0,0,0-40,40H80a56.06,56.06,0,0,0-56,56,16,16,0,0,0,8,13.83V128c0,35.53,33.12,62.12,59.74,83.49C103.66,221.07,120,234.18,120,240a8,8,0,0,0,16,0c0-5.82,16.34-18.93,28.26-28.51C190.88,190.12,224,163.53,224,128V117.83A16,16,0,0,0,232,104ZM80,64h96a40.06,40.06,0,0,1,40,40H40A40,40,0,0,1,80,64Zm74.25,135c-10.62,8.52-20,16-26.25,23.37-6.25-7.32-15.63-14.85-26.25-23.37C77.8,179.79,48,155.86,48,128v-8H208v8C208,155.86,178.2,179.79,154.25,199Z\"></path></svg>",
+				"Acorn"
+			],
+			[
+				"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"32\" fill=\"#000000\" viewBox=\"0 0 256 256\"><path d=\"M83.19,174.4a8,8,0,0,0,11.21-1.6,52,52,0,0,1,83.2,0,8,8,0,1,0,12.8-9.6A67.88,67.88,0,0,0,163,141.51a40,40,0,1,0-53.94,0A67.88,67.88,0,0,0,81.6,163.2,8,8,0,0,0,83.19,174.4ZM112,112a24,24,0,1,1,24,24A24,24,0,0,1,112,112Zm96-88H64A16,16,0,0,0,48,40V64H32a8,8,0,0,0,0,16H48v40H32a8,8,0,0,0,0,16H48v40H32a8,8,0,0,0,0,16H48v24a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V40A16,16,0,0,0,208,24Zm0,192H64V40H208Z\"></path></svg>",
+				"Adress book"
+			]
+		],
+		"label": "svgs",
+		"name": "svgs",
+		"occurrence": {}
+	}
+]

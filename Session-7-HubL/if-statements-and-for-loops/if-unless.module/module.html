@@ -1,0 +1,157 @@
+{# This module contains the basics about if- and unless-statements 
+
+1. if- and unless-statements are basically the same and can be used to enhance/automate your code
+2. For the if-statement the logic is like this:
+
+{% if X %} (shortend boolean statemenet)
+do something if X is true
+{% else %}
+do something if X is false 
+{% endif %}
+
+{% if X == "value" %}
+do something if X equals "value" 
+{% else %}
+do something if X it's not "value" 
+{% endif %}
+
+{% if X == "value" %}
+do something if X equals "value"
+{% elif X == "value2" %}
+do something if X equals "value2"
+{% else %}
+do something if X is false/no value matches (fallback)
+{% endif %}
+
+
+3. The unless-statement behaves similar but in the oposite way
+
+{% unless X %} (shortend boolean statemenet)
+do something unless X is true
+{% else %}
+do something if X is true 
+{% endunless %}
+
+{% unless X == "value" %}
+do something unless X equals "value" 
+{% else %}
+do something if X quals "value" 
+{% endunless %}
+
+#}
+
+{# simple if-statement #}
+<div>
+  <h2>
+    If-statement example:
+  </h2>
+  <p>
+    Logic: If "show button is enabled -> show button"
+  </p>
+</div>
+
+{% if module.show_button %}
+  {% set if_href = module.if_button.link.url.href %}
+  {% if module.if_button.link.url.type is equalto "EMAIL_ADDRESS" %}
+  {% set href = "mailto:" + href %}
+  {% endif %}
+  <a href="{{ if_href }}"	class="btn btn-primary" {% if module.if_button.link.open_in_new_tab %}target="_blank"{% endif %}	{% if module.if_button.link.rel %}rel="{{ module.if_button.link.rel|escape_attr }}"{% endif %}>
+    {{ module.if_button.button_label }}
+  </a>
+{% endif %}
+
+{# unless statement #}
+<div>
+  <h2>
+    unless-statement example:
+  </h2>
+  <p>
+    Logic: Unless "show button is enabled -> show button"
+  </p>
+</div>
+
+{% unless module.show_button %}
+  {% set unless_href = module.unless_button.link.url.href %}
+  {% if module.unless_button.link.url.type is equalto "EMAIL_ADDRESS" %}
+  {% set href = "mailto:" + href %}
+  {% endif %}
+  <a href="{{ unless_href }}"	class="btn btn-primary" {% if module.unless_button.link.open_in_new_tab %}target="_blank"{% endif %}	{% if module.unless_button.link.rel %}rel="{{ module.unless_button.link.rel|escape_attr }}"{% endif %}>
+    {{ module.unless_button.button_label }}
+  </a>
+{% endunless %}
+
+{# value based if-statement #}
+<div>
+  <h2>
+    If-statement based on value example:
+  </h2>
+  <p>
+    Logic: If "button label is not empty -> show button"
+  </p>
+</div>
+
+{% if module.if_button_label.button_label != "" %}
+  {% set if_href = module.if_button_label.link.url.href %}
+  {% if module.if_button_label.link.url.type is equalto "EMAIL_ADDRESS" %}
+  {% set href = "mailto:" + href %}
+  {% endif %}
+  <a href="{{ if_href }}"	class="btn btn-primary" {% if module.if_button_label.link.open_in_new_tab %}target="_blank"{% endif %}	{% if module.if_button_label.link.rel %}rel="{{ module.if_button_label.link.rel|escape_attr }}"{% endif %}>
+    {{ module.if_button_label.button_label }}
+  </a>
+{% endif %}
+
+
+{# advanced if-statement with elif and else #}
+<div>
+  <h2>
+    Elif-statement example:
+  </h2>
+  <p>
+    Logic: If "display type " equals button -> show button, if "display type" equals image -> show image, if "button type" equals text -> show text, otherwise/else show fallback text
+  </p>
+</div>
+
+{% set if_href = module.if_button.link.url.href %}
+  {% if module.if_button.link.url.type is equalto "EMAIL_ADDRESS" %}
+    {% set href = "mailto:" + href %}
+  {% endif %}
+
+{% if module.elif_group.display_type == "button" %}
+    <a href="{{ if_href }}"	class="btn btn-primary" {% if module.if_button.link.open_in_new_tab %}target="_blank"{% endif %}	{% if module.if_button.link.rel %}rel="{{ module.if_button.link.rel|escape_attr }}"{% endif %}>
+      {{ module.if_button.button_label }}
+    </a>
+{% elif module.elif_group.display_type == "image" %}
+    {% if module.elif_group.image.src %}
+      <img src="{{ module.elif_group.image.src|escape_url }}" alt="{{ module.elif_group.image.alt|escape_attr }}" class="image">
+  {% endif %}
+{% elif module.elif_group.display_type == "text" %}
+    <div class="info text">{{ module.elif_group.text }}</div>
+{% else %}
+    <div class="warning text">This is a fallback</div>
+{% endif %}
+
+{# property based if-statement#}
+<div>
+  <h2>
+    Properties and if-statements:
+  </h2>
+  <p>
+    You can use CRM properties in if- (or unless-) statements
+  </p>
+</div>
+
+  {% set href = module.property_button.link.url.href %}
+  {% if module.property_button.link.url.type is equalto "EMAIL_ADDRESS" %}
+    {% set href = "mailto:" + href %}
+  {% endif %}
+
+  {% if module.property_button.crm_property.properties.firstname == "Anton" %}
+    <a href="{{ href }}" {% if module.property_button.link.open_in_new_tab %}target="_blank"{% endif %} {% if module.property_button.link.rel %}rel="{{ module.property_button.link.rel|escape_attr }}"{% endif %}>
+      {{ module.property_button.button_label ~ module.property_button.crm_property.properties.firstname }}
+    </a>
+{% else %}
+  <a href="{{ href }}" {% if module.property_button.link.open_in_new_tab %}target="_blank"{% endif %} {% if module.property_button.link.rel %}rel="{{ module.property_button.link.rel|escape_attr }}"{% endif %}>
+      {{ module.property_button.button_label }}
+    </a>
+{% endif %}
+
