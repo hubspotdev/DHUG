@@ -15,13 +15,10 @@
 
 ### HubSpot specific resources
 
-- [Accessibility in HubSpot](https://developers.hubspot.com/docs/cms/accessibility)
-- [HubSpot CMS Accessibility Requirements](https://developers.hubspot.com/docs/cms/accessibility/requirements)
-- [Building Accessible HubSpot CMS Templates](https://developers.hubspot.com/docs/cms/accessibility/building-accessible-templates)
-- [HubSpot Accessibility Testing Guide](https://developers.hubspot.com/docs/cms/accessibility/testing)
-- [HubSpot Design System (Canvas)](https://canvas.hubspot.com/principles/accessibility) - Accessibility principles and guidelines
+- [Accessibility in HubSpot](https://developers.hubspot.com/docs/guides/cms/content/accessibility)
+[Web Accessibility Guidelines](https://blog.hubspot.com/website/web-accessibility-guidelines)
 - [HubSpot Blog: Making Content More Accessible](https://blog.hubspot.com/website/web-accessibility)
-- [HubSpot Academy: Web Accessibility Course](https://academy.hubspot.com/courses/web-accessibility)
+- [HubSpot Academy: Web Accessibility Course](https://academy.hubspot.com/lessons/web-accessibility)
 
 ### Testing Tools
 - [Axe DevTools](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US) - Browser extension for accessibility testing
