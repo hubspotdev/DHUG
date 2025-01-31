@@ -1,8 +1,8 @@
 # Session 16: Building a more accessible experience in 2025 
 
 
-[Go watch the episode](https://youtube.com/live/giKvKFdumK0?feature=share)
-[Next session: Beyond the SERP: Technical SEO Meets Web Performance](https://youtube.com/live/AhTM4OHgaqw?feature=share)
+-[Go watch the episode](https://youtube.com/live/giKvKFdumK0?feature=share)
+-[Next session: Beyond the SERP: Technical SEO Meets Web Performance](https://youtube.com/live/AhTM4OHgaqw?feature=share)
 
 
 ## Accessibility tools and resources
