@@ -5,7 +5,12 @@
 - [Next session: Beyond the SERP: Technical SEO Meets Web Performance](https://youtube.com/live/AhTM4OHgaqw?feature=share)
 
 
+
+
 ## Accessibility tools and resources
+
+### Anton's module example
+[Screen Reader macro](https://github.com/GraphiSpot/dhug)
 
 ### Guidelines and Standards
 - [WCAG 2.1](https://www.w3.org/WAI/standards-guidelines/wcag/) - Web Content Accessibility Guidelines
