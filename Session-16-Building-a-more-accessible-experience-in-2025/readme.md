@@ -1,7 +1,7 @@
 # Session 16: Building a more accessible experience in 2025 
 
 
-[Go watch the episode]([https://developers.hubspot.com/docs/cms/accessibility](https://youtube.com/live/giKvKFdumK0?feature=share))
+[Go watch the episode](https://youtube.com/live/giKvKFdumK0?feature=share)
 [Next session: Beyond the SERP: Technical SEO Meets Web Performance](https://youtube.com/live/AhTM4OHgaqw?feature=share)
 
 
