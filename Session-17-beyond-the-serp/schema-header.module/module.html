@@ -1,0 +1,221 @@
+{#
+Documenttion:
+- https://schema.org/Product
+- https://support.google.com/merchants/answer/6386198?hl=nl
+- https://www.schemaapp.com/newsletter/schema-org-variable-products-productmodels-offers/
+
+Formating:
+- http://jsonviewer.stack.hu/
+
+Testing:
+- https://search.google.com/structured-data/testing-tool
+- https://search.google.com/test/rich-results
+#}
+{% set title = module.product_name || content.name %}
+    {% set description =  module.product_desc || page_meta.meta_description %}
+    
+    {% if module.preview_mode %}
+    <pre>
+    {% else %}
+    <script type="application/ld+json">
+    {% endif %}
+    {
+      "@context": "https://schema.org/",
+      "@graph": [
+        {
+          "@context": "https://schema.org/",
+          "@type": "Product",
+          "@id": "{{content.absolute_url}}#product",
+          "name": "{{ title }}",
+          {%- if module.brand %}"brand": {
+            "@type": "Thing",
+            "name": "{{ module.brand }}"
+          },
+          {% endif %}
+          {%- if module.image.src %}
+          "image": "{{ module.image.src }}",
+          {% else %}
+          {%- if content.featured_image %}
+          "image": "{{ content.featured_image }}",
+          {% endif %}
+          {% endif %}
+          "url": "{{content.absolute_url}}",
+          {%- if description %}"description": "{{ description|escapejson }}",{% endif %}
+          {%- if module.sku %}"sku": "{{ module.sku|escapejson }}",{% endif %}
+          {%- if module.mpn %}"mpn": "{{ module.mpn|escapejson }}",{% endif %}
+          {%- if module.gtin8 %}"gtin8": "{{ module.gtin8|escapejson }}",{% endif %}
+          {%- if module.offer_type == 'simple_offer' %}
+             {# Currency #}
+             {%- if module.simple_offer.currency == "USD" -%}
+                {% set simple_currency_icon = "$" -%}
+            {%- elif module.simple_offer.currency == "EUR" -%}
+                {% set simple_currency_icon = "€" -%}
+            {%- elif module.simple_offer.currency == "GBP" -%}
+                {% set simple_currency_icon = "£" -%}
+            {%- elif module.simple_offer.currency == "JPY" -%}
+                {% set simple_currency_icon = "¥" -%}
+            {%- elif module.simple_offer.currency == "INR" -%}
+                {% set simple_currency_icon = "₹" -%}
+            {%- elif module.simple_offer.currency == "custom" -%}
+                {%- set simple_currency_icon = module.simple_offer.custom_currency_icon -%}
+            {%- endif -%}
+            {%- unless module.simple_offer.currency == "custom" -%}
+                {%- set simple_currency_code = module.simple_offer.currency -%}
+            {%- else -%}
+                {%- set simple_currency_code = module.simple_offer.custom_currency -%}
+            {%- endunless -%}
+            {%- set offer_price = module.simple_offer.price -%}
+          "offers": [
+            {
+              "@type": "Offer",
+              {%- if module.simple_offer.sku         %}"sku": "{{ module.simple_offer.sku|escapejson }}",{% endif %}
+              {%- if module.simple_offer.gtin        %}"gtin": "{{ module.simple_offer.gtin|escapejson }}",{% endif %}
+              {%- if module.simple_offer.offer_name  %}"name": "{{ module.simple_offer.offer_name|escapejson }}",{% endif %}
+              {%- if module.simple_offer.price %}
+                "price": "{{ offer_price | format_currency_value(locale=language, currency=simple_currency_code, maxDecimalDigits=2) }}",
+                "priceCurrency": "{{ simple_currency_code|escapejson }}",
+              {% endif %}
+              {%- if module.simple_offer.price_valid_until %}
+              "priceValidUntil": "{{ module.simple_offer.price_valid_until|datetimeformat('%Y-%m-%d') }}",
+              {%- else -%}
+              "priceValidUntil": "{{ local_dt|datetimeformat('%Y')|int + 1 }}-{{ local_dt|datetimeformat('%m-%d') }}",
+              {%- endif %}
+              {%- if module.simple_offer.condition   %}"itemCondition": "http://schema.org/{{ module.simple_offer.condition }}",{% endif %}
+              {%- if module.simple_offer.stock       %}"availability": "http://schema.org/{{ module.simple_offer.stock }}",{% endif %}
+              "url": "{{content.absolute_url}}",
+              "seller": {
+                "@type": "Organization",
+                {%- if module.simple_offer.seller.seller_name|escapejson %}
+                "name": "{{ module.simple_offer.seller.seller_name|escapejson }}",
+                {%- else %}
+                "name": "{{ site_settings.company_name|escapejson }}",
+                {% endif %}
+                {%- if module.simple_offer.seller.url.href|escapejson %}
+                "url": "{{ module.simple_offer.seller.url.href|escapejson }}"
+                {%- else %}
+                "url": "{{ request.scheme }}://{{ request.domain }}"
+                {% endif %}
+              }
+            }
+          ]{% elif module.offer_type == 'aggregate_offer' %}
+            {# Currency #}
+            {%- if module.aggregate_offer.currency == "USD" -%}
+                {% set currency_icon = "$" -%}
+                
+            {%- elif module.aggregate_offer.currency == "EUR" -%}
+                {% set currency_icon = "€" -%}
+            {%- elif module.aggregate_offer.currency == "GBP" -%}
+                {% set currency_icon = "£" -%}
+            {%- elif module.aggregate_offer.currency == "JPY" -%}
+                {% set currency_icon = "¥" -%}
+            {%- elif module.aggregate_offer.currency == "INR" -%}
+                {% set currency_icon = "₹" -%}
+            {%- elif module.aggregate_offer.currency == "custom" -%}
+                {%- set currency_icon = module.aggregate_offer.custom_currency_icon -%}
+            {%- endif -%}
+
+            {%- unless module.aggregate_offer.currency == "custom" -%}
+                {%- set aggregate_currency_code = module.aggregate_offer.currency -%}
+            {%- else -%}
+                {%- set aggregate_currency_code = module.aggregate_offer.custom_currency -%}
+            {%- endunless -%}
+                
+            {%- set aggregate_prices = {
+                "lowPrice": module.aggregate_offer.low_price,
+                "highPrice": module.aggregate_offer.high_price
+            } -%}
+            
+          "offers": [
+            {
+              "@type": "AggregateOffer",
+              {% if module.aggregate_offer.sku         %}"sku": "{{ module.aggregate_offer.sku }}",{% endif %}
+              {% if module.aggregate_offer.gtin        %}"gtin": "{{ module.aggregate_offer.gtin }}",{% endif %}
+              {% if module.aggregate_offer.offer_name  %}"name": "{{ module.aggregate_offer.offer_name }}",{% endif %}
+              {% if module.aggregate_offer.currency    %}"priceCurrency": "{{ aggregate_currency_code }}",{% endif %}
+              {% if module.aggregate_offer.low_price    %}"lowPrice": "{{ aggregate_prices.lowPrice| format_currency_value(locale=language, currency=aggregate_currency_code, maxDecimalDigits=2) }}",{% endif %}
+              {% if module.aggregate_offer.high_price   %}"highPrice": "{{ aggregate_prices.highPrice| format_currency_value(locale=language, currency=aggregate_currency_code, maxDecimalDigits=2) }}",{% endif %}
+              {% if module.aggregate_offer.price_valid_until %}
+              "priceValidUntil": "{{ module.aggregate_offer.price_valid_until|datetimeformat('%Y-%m-%d') }}",
+              {% else %}
+              "priceValidUntil": "{{ local_dt|datetimeformat('%Y')|int + 1 }}-{{ local_dt|datetimeformat('%m-%d') }}",
+              {% endif %}
+              {% if module.aggregate_offer.condition   %}"itemCondition": "http://schema.org/{{ module.aggregate_offer.condition }}",{% endif %}
+              {%- if module.aggregate_offer.stock       %}"availability": "http://schema.org/{{ module.aggregate_offer.stock }}",{% endif %}
+              "url": "{{content.absolute_url}}",
+              "seller": {
+                "@type": "Organization",
+                {% if module.aggregate_offer.seller.seller_name %}
+                "name": "{{ module.aggregate_offer.seller.seller_name }}",
+                {% else %}
+                "name": "{{ site_settings.company_name }}",
+                {% endif %}
+                {% if module.aggregate_offer.seller.url.href %}
+                "url": "{{ module.aggregate_offer.seller.url.href }}"
+                {% else %}
+                "url": "{{ request.scheme }}://{{ request.domain }}"{% endif %}
+              }
+            }
+          ]{% 
+          elif module.offer_type == 'variant_offer' %}
+            {% if module.variant_offer == [] %}
+            {% else %}
+            "offers": [ 
+            {% for item in module.variant_offer %}
+                {%- if item.currency == "USD" -%}
+                    {% set currency_icon = "$" -%}
+                {%- elif item.currency == "EUR" -%}
+                    {% set currency_icon = "€" -%}
+                {%- elif item.currency == "GBP" -%}
+                    {% set currency_icon = "£" -%}
+                {%- elif item.currency == "JPY" -%}
+                    {% set currency_icon = "¥" -%}
+                {%- elif item.currency == "INR" -%}
+                    {% set currency_icon = "₹" -%}
+                {%- elif item.currency == "custom" -%}
+                    {%- set currency_icon = item.custom_currency_icon -%}
+                {%- endif -%}
+                {%- unless item.currency == "custom" -%}
+                    {%- set currency_code = item.currency -%}
+                {%- else -%}
+                    {%- set currency_code = item.custom_currency -%}
+                {%- endunless -%}
+                {%- set offer_price = item.price -%}
+                {
+                  "@type": "Offer",
+                  {% if item.sku         %}"sku": "{{ item.sku }}",{% endif %}
+                  {% if item.gtin         %}"gtin": "{{ item.gtin }}",{% endif %}
+                  {% if item.offer_name  %}"name": "{{ item.offer_name }}",{% endif %}
+                  {% if item.currency    %}"priceCurrency": "{{ currency_code }}",{% endif %}
+                  {% if item.price       %}"price": "{{ offer_price| format_currency_value(locale=language, currency=currency_code, maxDecimalDigits=2) }}",{% endif %}
+                  {% if item.price_valid_until %}
+                  "priceValidUntil": "{{ item.price_valid_until|datetimeformat('%Y-%m-%d') }}",
+                  {% else %}
+                  "priceValidUntil": "{{ local_dt|datetimeformat('%Y')|int + 1 }}-{{ local_dt|datetimeformat('%m-%d') }}",
+                  {% endif %}
+                  {% if item.condition   %}"itemCondition": "http://schema.org/{{ item.condition }}",{% endif %}
+                  {% if item.stock       %}"availability": "http://schema.org/{{ item.stock }}",{% endif %}
+                  "url": "{{content.absolute_url}}",
+                  "seller": {
+                    "@type": "Organization",
+                    {% if item.seller.seller_name %}
+                    "name": "{{ item.seller.seller_name }}",
+                    {% else %}
+                    "name": "{{ site_settings.company_name }}",
+                    {% endif %}
+                    {% if item.seller.url.href %}
+                    "url": "{{ item.seller.url.href }}"
+                    {% else %}
+                    "url": "{{ request.scheme }}://{{ request.domain }}"{% endif %}
+                  }
+                }{% if !loop.last %},{% endif %}{% endfor %}
+              ]
+            {% endif %}
+          {% endif %}
+        }
+      ]
+    }
+    {% if module.preview_mode %}
+    </pre>
+    {% else %}
+    </script>
+    {% endif %}

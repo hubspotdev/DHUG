@@ -1,0 +1,108 @@
+[
+  {
+    "name": "og_title",
+    "label": "OG Title",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null
+  },
+  {
+    "name": "og_description",
+    "label": "OG Description",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": "This is a placeholder for og description text"
+  },
+  {
+    "name": "site_name",
+    "label": "Site name",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null
+  },
+  {
+    "name": "og_image_source",
+    "label": "OG Image source",
+    "id": "og_image_source",
+    "required": false,
+    "locked": false,
+    "display": "radio",
+    "inline_help_text": "",
+    "help_text": "",
+    "choices": [
+      [
+        "featured_image",
+        "Featured Image"
+      ],
+      [
+        "custom",
+        "Custom"
+      ]
+    ],
+    "type": "choice",
+    "placeholder": "",
+    "default": null
+  },
+  {
+    "name": "og_image",
+    "label": "OG Image",
+    "required": false,
+    "locked": false,
+    "inline_help_text": "",
+    "help_text": "",
+    "responsive": true,
+    "resizable": true,
+    "show_loading": false,
+    "type": "image",
+    "default": {
+      "size_type": "auto",
+      "src": "",
+      "alt": null,
+      "loading": "disabled"
+    },
+    "visibility": {
+      "controlling_field": "og_image_source",
+      "operator": "EQUAL",
+      "controlling_value_regex": "custom"
+    }
+  },
+  {
+    "name": "og_url",
+    "label": "OG url",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null
+  }
+]

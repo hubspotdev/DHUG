@@ -1,0 +1,143 @@
+[
+  {
+    "name": "background_image",
+    "label": "Background Image",
+    "required": false,
+    "locked": false,
+    "inline_help_text": "",
+    "help_text": "",
+    "type": "backgroundimage"
+  },
+  {
+    "name": "preload_priority",
+    "label": "Preload priority",
+    "required": false,
+    "locked": false,
+    "display": "radio",
+    "inline_help_text": "",
+    "help_text": "",
+    "choices": [
+      [
+        "high",
+        "High"
+      ],
+      [
+        "low",
+        "Low"
+      ]
+    ],
+    "type": "choice",
+    "placeholder": "",
+    "default": "high"
+  },
+  {
+    "name": "headline",
+    "label": "Headline",
+    "id": "content.headline",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": true,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": "Hi Interwebs! I'm a headline"
+  },
+  {
+    "name": "headline_size",
+    "label": "Headline size",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "inline_help_text": "",
+    "help_text": "This will set the headline-tag. <strong>SEO relevant</strong>",
+    "choices": [
+      [
+        "h1",
+        "Headline 1"
+      ],
+      [
+        "h2",
+        "Headline 2"
+      ],
+      [
+        "h3",
+        "Headline 3"
+      ],
+      [
+        "h4",
+        "Headline 4"
+      ]
+    ],
+    "type": "choice",
+    "placeholder": "",
+    "default": "h3",
+    "visibility": {
+      "controlling_field": "content.headline",
+      "controlling_value_regex": "true",
+      "operator": "NOT_EMPTY"
+    }
+  },
+  {
+    "name": "headline_style",
+    "label": "Headline style",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "inline_help_text": "",
+    "help_text": "This will set the headline look. <strong>Only for styling - no SEO impact</strong>",
+    "choices": [
+      [
+        "title",
+        "Title"
+      ],
+      [
+        "h1",
+        "Headline 1"
+      ],
+      [
+        "h2",
+        "Headline 2"
+      ],
+      [
+        "h3",
+        "Headline 3"
+      ],
+      [
+        "h4",
+        "Headline 4"
+      ]
+    ],
+    "type": "choice",
+    "placeholder": "",
+    "default": "title",
+    "visibility": {
+      "controlling_field": "content.headline",
+      "controlling_value_regex": "true",
+      "operator": "NOT_EMPTY"
+    }
+  },
+  {
+    "name": "content",
+    "label": "Content",
+    "id": "content.text",
+    "required": false,
+    "locked": false,
+    "type": "richtext",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": "Hello there! 👋 Welcome to our the SEO DHUG. This is a demo of preloading an hero/above the fold image.",
+    "enabled_features": [
+      "standard_emphasis",
+      "advanced_emphasis",
+      "personalize",
+      "nonbreaking_space",
+      "source_code",
+      "visual_blocks",
+      "emoji"
+    ]
+  }
+]

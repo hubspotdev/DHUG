@@ -1,0 +1,96 @@
+{# config #}
+{%- set hero_config = {
+    "preload_priority" : module.preload_priority,
+    "background_image" : module.background_image,
+    "headline" : module.headline,
+    "headline_tag" : module.headline_size,
+    "headline_style" : module.headline_style,
+    "content" : module.content
+} -%}
+
+{# preload image #}
+{%- if hero_config.background_image.src -%}
+    {%- require_head -%}
+        <link rel="preload" as="image" href="{{ hero_config.background_image.src }}" fetchpriority="{{ hero_config.preload_priority }}">
+    {%- end_require_head -%}
+{%- endif -%}
+
+{# Demo purpose #}
+{% if is_in_previewer %}
+    {%- require_css -%}
+        <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+            .debug{
+                width:fit-content;
+                font-family: monospace;
+                padding:1rem;
+                color: #032C86;
+                border:.25rem solid #032C86;
+                background-color: #9CD4FC;
+            }
+            h1,.h1,
+            h2,.h2,
+            h3,.h3,
+            h4,.h4,
+            h5,.h5,
+            h6,.h6{
+                color:#005F73;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 600;
+            }
+            .heroContentText{
+                font-family: 'Poppins', sans-serif;
+                font-weight: 300;
+                font-size:1.125rem;
+                max-width: 75ch;
+            }
+        </style>
+    {%- end_require_css -%}
+
+    <div class="debug">
+        <p>
+            <strong>Debug</strong>
+        </p>
+        <p>
+            <ul>
+                {% for key, value in hero_config.items() %}
+                    <li>
+                        <strong>{{ key|replace("_", " ")|title }}</strong>: {{ value }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </p>
+        <p>
+            <strong>CSS</strong>
+        </p>
+        <code>
+            {{ hero_config.background_image.css }}
+        </code>
+    
+    </div>
+{% endif %}
+
+{# Style #}
+{%- require_css -%}
+    <style>
+        {%- scope_css -%}
+            .heroImage{
+                {{ hero_config.background_image.css }}
+            }
+        {%- end_scope_css -%}
+    </style>
+{%- end_require_css -%}
+
+
+{# Hero #}
+<div class="hero">
+    <div class="heroImage">
+        <div class="heroContent">
+            <{{ hero_config.headline_tag }} class="headline {{ hero_config.headline_style }}">{{ hero_config.headline }}</{{ hero_config.headline_tag }}>
+            <div class="heroContentText">
+                {{ hero_config.content }}
+            </div>
+        </div>
+    </div>
+</div>
+

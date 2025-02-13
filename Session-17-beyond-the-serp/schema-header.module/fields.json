@@ -1,0 +1,1005 @@
+[
+  {
+    "name": "preview_mode",
+    "label": "Preview mode",
+    "required": false,
+    "locked": false,
+    "type": "boolean",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": true
+  },
+  {
+    "name": "product_name",
+    "label": "Product name",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null
+  },
+  {
+    "name": "product_desc",
+    "label": "Product description",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null
+  },
+  {
+    "name": "brand",
+    "label": "Brand",
+    "id": "content.brand",
+    "required": false,
+    "locked": false,
+    "type": "boolean",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": false
+  },
+  {
+    "name": "image",
+    "label": "Image",
+    "required": false,
+    "locked": false,
+    "inline_help_text": "",
+    "help_text": "",
+    "responsive": true,
+    "resizable": true,
+    "show_loading": false,
+    "type": "image",
+    "default": {
+      "size_type": "auto",
+      "src": "",
+      "alt": null,
+      "loading": "disabled"
+    }
+  },
+  {
+    "name": "description",
+    "label": "Description",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null
+  },
+  {
+    "name": "sku",
+    "label": "SKU",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null
+  },
+  {
+    "name": "mpn",
+    "label": "MPN",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null
+  },
+  {
+    "name": "gtin8",
+    "label": "GTIN8",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null
+  },
+  {
+    "name": "offer_type",
+    "label": "Offer type",
+    "id": "offer_type",
+    "required": false,
+    "locked": false,
+    "display": "radio",
+    "inline_help_text": "",
+    "help_text": "",
+    "choices": [
+      [
+        "simple_offer",
+        "Simple offer"
+      ],
+      [
+        "aggregate_offer",
+        "Aggregate offer"
+      ],
+      [
+        "variant_offer",
+        "Variant offer"
+      ]
+    ],
+    "type": "choice",
+    "placeholder": "",
+    "default": null
+  },
+  {
+    "name": "simple_offer",
+    "label": "Simple offer",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "name": "sku",
+        "label": "SKU",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "gtin",
+        "label": "GTIN",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "offer_name",
+        "label": "Offer name",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "id": "simple_offer.price",
+        "required": false,
+        "locked": false,
+        "display": "text",
+        "step": 1,
+        "type": "number",
+        "min": null,
+        "max": null,
+        "inline_help_text": "Leave blank for no price",
+        "help_text": "",
+        "default": "9.99"
+      },
+      {
+        "name": "currency",
+        "label": "Currency",
+        "id": "simple_offer.currency",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "inline_help_text": "",
+        "help_text": "",
+        "choices": [
+          [
+            "USD",
+            "Dollar"
+          ],
+          [
+            "EUR",
+            "Euro"
+          ],
+          [
+            "JPY",
+            "Yen"
+          ],
+          [
+            "GBP",
+            "Pound"
+          ],
+          [
+            "INR",
+            "Rupee"
+          ],
+          [
+            "custom",
+            "Custom"
+          ]
+        ],
+        "type": "choice",
+        "placeholder": "",
+        "default": "EUR",
+        "visibility": {
+          "controlling_field": "simple_offer.price"
+        }
+      },
+      {
+        "name": "custom_currency",
+        "label": "Custom currency",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "Put any three letter <strong>code</strong> from <a href=\"https://en.wikipedia.org/wiki/ISO_4217#List_of_ISO_4217_currency_codes\" target=\"_blank\">this list</a> here",
+        "help_text": "",
+        "default": null,
+        "visibility_rules": "ADVANCED",
+        "advanced_visibility": {
+          "boolean_operator": "AND",
+          "criteria": [
+            {
+              "controlling_field": "simple_offer.price"
+            },
+            {
+              "controlling_field": "simple_offer.currency",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL"
+            }
+          ]
+        }
+      },
+      {
+        "name": "custom_currency_icon",
+        "label": "Custom currency icon",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null,
+        "visibility_rules": "ADVANCED",
+        "advanced_visibility": {
+          "boolean_operator": "AND",
+          "criteria": [
+            {
+              "controlling_field": "simple_offer.price"
+            },
+            {
+              "controlling_field": "simple_offer.currency",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL"
+            }
+          ]
+        }
+      },
+      {
+        "name": "price_valid_until",
+        "label": "Price valid until",
+        "required": false,
+        "locked": false,
+        "step": 30,
+        "type": "datetime",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "condition",
+        "label": "Condition",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "stock",
+        "label": "Stock",
+        "required": false,
+        "locked": false,
+        "display": "text",
+        "step": 1,
+        "type": "number",
+        "min": null,
+        "max": null,
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "seller",
+        "label": "Seller",
+        "required": false,
+        "locked": false,
+        "children": [
+          {
+            "name": "seller_name",
+            "label": "Seller name",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "validation_error_message": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "placeholder": "",
+            "inline_help_text": "",
+            "help_text": "",
+            "default": null
+          },
+          {
+            "name": "company_name",
+            "label": "Company name",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "validation_error_message": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "placeholder": "",
+            "inline_help_text": "",
+            "help_text": "",
+            "default": null
+          },
+          {
+            "name": "url",
+            "label": "URL",
+            "required": false,
+            "locked": false,
+            "inline_help_text": "",
+            "help_text": "",
+            "supported_types": [
+              "EXTERNAL"
+            ],
+            "type": "url",
+            "default": {
+              "content_id": null,
+              "href": "",
+              "type": "EXTERNAL"
+            }
+          }
+        ],
+        "type": "group",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": {}
+      }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": {},
+    "visibility": {
+      "controlling_field": "offer_type",
+      "controlling_value_regex": "simple_offer",
+      "operator": "EQUAL"
+    }
+  },
+  {
+    "name": "aggregate_offer",
+    "label": "Aggregate offer",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "name": "sku",
+        "label": "SKU",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "gtin",
+        "label": "GTIN",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "offer_name",
+        "label": "Offer name",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "low_price",
+        "label": "Low price",
+        "required": false,
+        "locked": false,
+        "display": "text",
+        "step": 1,
+        "type": "number",
+        "min": null,
+        "max": null,
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "high_price",
+        "label": "High price",
+        "required": false,
+        "locked": false,
+        "display": "text",
+        "step": 1,
+        "type": "number",
+        "min": null,
+        "max": null,
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "currency",
+        "label": "Currency",
+        "id": "aggregate_offer.currency",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "inline_help_text": "",
+        "help_text": "",
+        "choices": [
+          [
+            "USD",
+            "Dollar"
+          ],
+          [
+            "EUR",
+            "Euro"
+          ],
+          [
+            "JPY",
+            "Yen"
+          ],
+          [
+            "GBP",
+            "Pound"
+          ],
+          [
+            "INR",
+            "Rupee"
+          ],
+          [
+            "custom",
+            "Custom"
+          ]
+        ],
+        "type": "choice",
+        "placeholder": "",
+        "default": "EUR",
+        "visibility": {
+          "controlling_field": "aggregate_offer.low_price"
+        }
+      },
+      {
+        "name": "custom_currency",
+        "label": "Custom currency",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "Put any three letter <strong>code</strong> from <a href=\"https://en.wikipedia.org/wiki/ISO_4217#List_of_ISO_4217_currency_codes\" target=\"_blank\">this list</a> here",
+        "help_text": "",
+        "default": null,
+        "visibility_rules": "ADVANCED",
+        "advanced_visibility": {
+          "boolean_operator": "AND",
+          "criteria": [
+            {
+              "controlling_field": "aggregate_offer.low_price"
+            },
+            {
+              "controlling_field": "aggregate_offer.currency",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL"
+            }
+          ]
+        }
+      },
+      {
+        "name": "custom_currency_icon",
+        "label": "Custom currency icon",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null,
+        "visibility_rules": "ADVANCED",
+        "advanced_visibility": {
+          "boolean_operator": "AND",
+          "criteria": [
+            {
+              "controlling_field": "aggregate_offer.low_price"
+            },
+            {
+              "controlling_field": "aggregate_offer.currency",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL"
+            }
+          ]
+        }
+      },
+      {
+        "name": "price_valid_until",
+        "label": "Price valid until",
+        "required": false,
+        "locked": false,
+        "step": 30,
+        "type": "datetime",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "condition",
+        "label": "Condition",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "stock",
+        "label": "Stock",
+        "required": false,
+        "locked": false,
+        "display": "text",
+        "step": 1,
+        "type": "number",
+        "min": null,
+        "max": null,
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "seller",
+        "label": "Seller",
+        "required": false,
+        "locked": false,
+        "children": [
+          {
+            "name": "seller_name",
+            "label": "Seller name",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "validation_error_message": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "placeholder": "",
+            "inline_help_text": "",
+            "help_text": "",
+            "default": null
+          },
+          {
+            "name": "company_name",
+            "label": "Company name",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "validation_error_message": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "placeholder": "",
+            "inline_help_text": "",
+            "help_text": "",
+            "default": null
+          },
+          {
+            "name": "url",
+            "label": "URL",
+            "required": false,
+            "locked": false,
+            "inline_help_text": "",
+            "help_text": "",
+            "supported_types": [
+              "EXTERNAL"
+            ],
+            "type": "url",
+            "default": {
+              "content_id": null,
+              "href": "",
+              "type": "EXTERNAL"
+            }
+          }
+        ],
+        "type": "group",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": {}
+      }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": {},
+    "visibility": {
+      "controlling_field": "offer_type",
+      "controlling_value_regex": "aggregate_offer",
+      "operator": "EQUAL"
+    }
+  },
+  {
+    "name": "variant_offer",
+    "label": "Variant offer",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": null,
+      "max": null,
+      "sorting_label_field": null,
+      "default": null
+    },
+    "children": [
+      {
+        "name": "sku",
+        "label": "SKU",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "gtin",
+        "label": "GTIN",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "offer_name",
+        "label": "Offer name",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "id": "variant_offer.price",
+        "required": false,
+        "locked": false,
+        "display": "text",
+        "step": 1,
+        "type": "number",
+        "min": null,
+        "max": null,
+        "inline_help_text": "Leave blank for no price",
+        "help_text": "",
+        "default": "9.99"
+      },
+      {
+        "name": "currency",
+        "label": "Currency",
+        "id": "variant_offer.currency",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "inline_help_text": "",
+        "help_text": "",
+        "choices": [
+          [
+            "USD",
+            "Dollar"
+          ],
+          [
+            "EUR",
+            "Euro"
+          ],
+          [
+            "JPY",
+            "Yen"
+          ],
+          [
+            "GBP",
+            "Pound"
+          ],
+          [
+            "INR",
+            "Rupee"
+          ],
+          [
+            "custom",
+            "Custom"
+          ]
+        ],
+        "type": "choice",
+        "placeholder": "",
+        "default": "EUR",
+        "visibility": {
+          "controlling_field": "variant_offer.price"
+        }
+      },
+      {
+        "name": "custom_currency",
+        "label": "Custom currency",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "Put any three letter <strong>code</strong> from <a href=\"https://en.wikipedia.org/wiki/ISO_4217#List_of_ISO_4217_currency_codes\" target=\"_blank\">this list</a> here",
+        "help_text": "",
+        "default": null,
+        "visibility_rules": "ADVANCED",
+        "advanced_visibility": {
+          "boolean_operator": "AND",
+          "criteria": [
+            {
+              "controlling_field": "variant_offer.price"
+            },
+            {
+              "controlling_field": "variant_offer.currency",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL"
+            }
+          ]
+        }
+      },
+      {
+        "name": "custom_currency_icon",
+        "label": "Custom currency icon",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null,
+        "visibility_rules": "ADVANCED",
+        "advanced_visibility": {
+          "boolean_operator": "AND",
+          "criteria": [
+            {
+              "controlling_field": "variant_offer.price"
+            },
+            {
+              "controlling_field": "variant_offer.currency",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL"
+            }
+          ]
+        }
+      },
+      {
+        "name": "price_valid_until",
+        "label": "Price valid until",
+        "required": false,
+        "locked": false,
+        "step": 30,
+        "type": "datetime",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "condition",
+        "label": "Condition",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "stock",
+        "label": "Stock",
+        "required": false,
+        "locked": false,
+        "display": "text",
+        "step": 1,
+        "type": "number",
+        "min": null,
+        "max": null,
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "seller",
+        "label": "Seller",
+        "required": false,
+        "locked": false,
+        "children": [
+          {
+            "name": "seller_name",
+            "label": "Seller name",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "validation_error_message": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "placeholder": "",
+            "inline_help_text": "",
+            "help_text": "",
+            "default": null
+          },
+          {
+            "name": "company_name",
+            "label": "Company name",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "validation_error_message": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "placeholder": "",
+            "inline_help_text": "",
+            "help_text": "",
+            "default": null
+          },
+          {
+            "name": "url",
+            "label": "URL",
+            "required": false,
+            "locked": false,
+            "inline_help_text": "",
+            "help_text": "",
+            "supported_types": [
+              "EXTERNAL"
+            ],
+            "type": "url",
+            "default": {
+              "content_id": null,
+              "href": "",
+              "type": "EXTERNAL"
+            }
+          }
+        ],
+        "type": "group",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": {}
+      }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": [],
+    "visibility": {
+      "controlling_field": "offer_type",
+      "controlling_value_regex": "variant_offer",
+      "operator": "EQUAL"
+    }
+  }
+]
