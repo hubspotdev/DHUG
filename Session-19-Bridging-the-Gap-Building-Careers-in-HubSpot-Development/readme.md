@@ -4,6 +4,7 @@
 
 ## Demos
 ### Bree's example
+- [Wordle in a UI Extensions App Card](https://github.com/hubspotdev/uie-wordle) - Learn how to use the `context` object provided by `hubspot.extend()`, use alerts, and employ serverless functions in this recreation of the popular word guessing game.
 
 ### Hannah's example
 - [Flow: HubSpot Invoice Creation](https://www.postman.com/hubspot/workspace/hubspot-developer-use-cases/flow/67db1b0ebc201100328f1775) - Postman flow demonstrating how to create an invoice for a deal with a "draft" status, associate it with relevant contacts, companies, and line items, create new line items, associate those with the invoice, and update the invoice status to "open," generating a new invoice and invoice ID.
