@@ -19,3 +19,4 @@
 - [Dev Community Landing Page - Your starting point for all things HubSpot Dev Community](https://developers.hubspot.com/community) 
 - [SJ’s DaD episode](https://www.youtube.com/watch?v=mtR_XGrPtaI)
 - [HubSpot Ecosystem Mentorship Program](https://developers.hubspot.com/ecosystem-mentorship-program)
+- [SJ's HubSpot Community Profile](https://community.hubspot.com/t5/user/viewprofilepage/user-id/109887) - to connect with me directly, reach out on the community!
