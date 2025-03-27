@@ -20,3 +20,16 @@
 - [SJ’s DaD episode](https://www.youtube.com/watch?v=mtR_XGrPtaI)
 - [HubSpot Ecosystem Mentorship Program](https://developers.hubspot.com/ecosystem-mentorship-program)
 - [SJ's HubSpot Community Profile](https://community.hubspot.com/t5/user/viewprofilepage/user-id/109887) - to connect with me directly, reach out on the community!
+
+## Contact us
+
+### Bree
+- [Community profile](https://community.hubspot.com/t5/user/viewprofilepage/user-id/791942)
+### SJ
+- [Community profile](https://community.hubspot.com/t5/user/viewprofilepage/user-id/109887)
+### Brooke
+- [Community profile](https://community.hubspot.com/t5/user/viewprofilepage/user-id/190366)
+### Jennifer
+- [Community profile](https://community.hubspot.com/t5/user/viewprofilepage/user-id/363300)
+### Hannah
+- [Community profile](https://community.hubspot.com/t5/user/viewprofilepage/user-id/420219)
